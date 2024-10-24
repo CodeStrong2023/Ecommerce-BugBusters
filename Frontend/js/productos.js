@@ -22,6 +22,10 @@ const crearProductos = (productos) => {
         precio.textContent = `USD $${producto.precio}`;
         precio.classList.add('producto-precio');
 
+        productoDiv.addEventListener('click', () => {
+            abrirModal(producto);
+
+        });
 
         productoDiv.appendChild(img);
         productoDiv.appendChild(nombre);
@@ -57,3 +61,26 @@ document.querySelectorAll('.categoria').forEach(a => {
         obtenerProductosPorCategoria(categoria);
     });
 });
+
+const abrirModal = (producto) => {
+    const modal = document.querySelector('#modal');
+    const modalImagen = document.querySelector('#imagen');
+    const modalNombre = document.querySelector('#nombre');
+    const modalDescripcion = document.querySelector('#descripcion');
+    const modalPrecio = document.querySelector('#precio');
+    
+    // Asignar los valores del producto al modal
+    modalImagen.src = `http://localhost:8080${producto.imagenUrl}`;
+    modalImagen.alt = producto.nombre;
+    modalNombre.textContent = producto.nombre;
+    modalDescripcion.textContent = producto.descripcion;
+    modalPrecio.textContent = `USD $${producto.precio}`;
+
+    // Mostrar el modal
+    modal.style.display = 'flex';
+
+    // Evento para cerrar el modal
+    document.getElementById('cerrar-modal').addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+}
