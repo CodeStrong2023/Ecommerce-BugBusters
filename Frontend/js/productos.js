@@ -68,6 +68,7 @@ const abrirModal = (producto) => {
     const modalNombre = document.querySelector('#nombre');
     const modalDescripcion = document.querySelector('#descripcion');
     const modalPrecio = document.querySelector('#precio');
+    const agregarCarritoBtn = document.getElementById('agregarCarrito'); // Obtén el botón de agregar al carrito
     
     // Asignar los valores del producto al modal
     modalImagen.src = `http://localhost:8080${producto.imagenUrl}`;
@@ -83,4 +84,28 @@ const abrirModal = (producto) => {
     document.getElementById('cerrar-modal').addEventListener('click', () => {
         modal.style.display = 'none';
     });
+
+    // Evento para agregar el producto al carrito
+    agregarCarritoBtn.onclick = () => {
+        agregarAlCarrito(producto); // Llama a la función para agregar al carrito
+        modal.style.display = 'none'; // Cierra el modal después de agregar
+    };
+}
+
+const agregarAlCarrito = (producto) => {
+    // Obtén el carrito actual del localStorage o crea uno nuevo
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    
+    // Verifica si el producto ya está en el carrito
+    const productoExistente = carrito.find(item => item.id === producto.id);
+    if (productoExistente) {
+        productoExistente.cantidad += 1; // Incrementa la cantidad
+    } else {
+        // Agrega el nuevo producto
+        carrito.push({ ...producto, cantidad: 1 });
+    }
+
+    // Guarda el carrito actualizado en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    alert(`${producto.nombre} ha sido agregado al carrito!`);
 }

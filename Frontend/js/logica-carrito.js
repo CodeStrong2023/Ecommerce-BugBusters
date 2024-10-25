@@ -1,39 +1,130 @@
 document.addEventListener('DOMContentLoaded', () => {
-   // Select all increment and decrement buttons
-   const incrementButtons = document.querySelectorAll('.increment');
-   const decrementButtons = document.querySelectorAll('.decrement');
+    const carritoJSON = localStorage.getItem('carrito');
 
-   incrementButtons.forEach(button => {
-       button.addEventListener('click', () => {
-           const productId = button.getAttribute('data-product-id');
-           const quantityInput = document.getElementById(`quantity-${productId}`);
-           let currentQuantity = parseInt(quantityInput.value);
-           quantityInput.value = currentQuantity + 1;
-       });
-   });
+    if (carritoJSON) {
+        const carrito = JSON.parse(carritoJSON);
+        const contenedorCarrito = document.getElementById('contenedor-carrito');
 
-   decrementButtons.forEach(button => {
-       button.addEventListener('click', () => {
-           const productId = button.getAttribute('data-product-id');
-           const quantityInput = document.getElementById(`quantity-${productId}`);
-           let currentQuantity = parseInt(quantityInput.value);
-           if (currentQuantity > 1) {
-               quantityInput.value = currentQuantity - 1;
-           }
-       });
-   });
+        if (!contenedorCarrito) {
+            console.error('Contenedor para productos no encontrado');
+            return;
+        }
 
-   // Select all remove product buttons after DOM content is loaded
-   const removeButtons = document.querySelectorAll('.remove-product');
+        carrito.forEach(producto => {
+            const productoDiv = document.createElement('div');
+            productoDiv.className = 'producto-agregado bg-custom-very-light-brown pt-20 mb-10';
+            const precioTotal = (producto.precio * producto.cantidad).toFixed(2);
 
-   // Añadir un evento a cada botón de eliminar
-   removeButtons.forEach(button => {
-       button.addEventListener('click', function() {
-           // Eliminar el producto
-           const productDiv = this.closest('.rounded-lg'); // Cambia el selector a .rounded-lg
-           if (productDiv) {
-               productDiv.remove();
-           }
-       });
-   });
+            productoDiv.innerHTML = `
+                <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
+                    <div class="rounded-lg md:w-2/3">
+                        <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start" data-product-id="${producto.id}">
+                            <img src="${producto.imagenUrl}" alt="product-image" class="w-full rounded-lg sm:w-40" />
+                            <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
+                                <div class="mt-5 sm:mt-0">
+                                    <h2 class="text-lg font-bold text-gray-900">${producto.nombre}</h2>
+                                    <p class="mt-1 text-xs text-gray-700">$${producto.precio}</p>
+                                </div>
+                                <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+                                    <div class="flex items-center border-gray-100">
+                                        <span class="decrement cursor-pointer rounded-l bg-gray-700 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50" data-product-id="${producto.id}">-</span>
+                                        <input id="quantity-${producto.id}" class="h-8 w-8 border text-black bg-white text-center text-xs outline-none" type="number" value="${producto.cantidad}" min="1" readonly />
+                                        <span class="increment cursor-pointer rounded-r bg-gray-700 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50" data-product-id="${producto.id}">+</span>
+                                    </div>
+                                    <div class="flex items-center space-x-4">
+                                        <p class="text-sm text-black precio-total" id="total-id-${producto.id}" data-product-id="${producto.id}">Precio total: $${precioTotal}</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 cursor-pointer duration-150 rounded-full bg-black hover:text-red-500 remove-product">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            contenedorCarrito.appendChild(productoDiv);
+        });
+
+        updateTotal(); // Calcular el total general inicial
+        setupEventListeners(); // Configurar los oyentes de eventos
+    } else {
+        console.log('No hay productos en el carrito');
+    }
 });
+
+// Función para actualizar el precio total al incrementar o decrementar
+function updateTotal() {
+    const totalElement = document.getElementById('total'); // Asegúrate de tener un elemento con este ID
+    if (!totalElement) {
+        console.error('Elemento total no encontrado');
+        return;
+    }
+
+    const preciosTotales = document.querySelectorAll('.precio-total');
+    let total = 0;
+
+    preciosTotales.forEach(precioTotal => {
+        const currentTotalPrice = parseFloat(precioTotal.textContent.replace(/[^0-9.-]+/g, "").match(/[\d.,]+/)[0]);
+        total += currentTotalPrice; // Sumar el precio de cada producto
+    });
+
+    totalElement.textContent = `Total: $${total.toFixed(2)}`; // Actualizar el precio total en la interfaz
+}
+
+// Función para configurar oyentes de eventos para incrementar y decrementar
+function setupEventListeners() {
+    const incrementButtons = document.querySelectorAll('.increment');
+    const decrementButtons = document.querySelectorAll('.decrement');
+
+    incrementButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const productId = button.getAttribute('data-product-id');
+            const quantityInput = document.getElementById(`quantity-${productId}`);
+            let currentQuantity = parseInt(quantityInput.value);
+            quantityInput.value = currentQuantity + 1;
+
+            // Actualizar el precio total del producto
+            const precioTotalElement = document.getElementById(`total-id-${productId}`);
+            const productPrice = parseFloat(precioTotalElement.textContent.match(/[\d.,]+/)[0]) / currentQuantity; // Obtener el precio unitario
+            const newTotalPrice = (productPrice * (currentQuantity + 1)).toFixed(2); // Calcular el nuevo precio total
+            precioTotalElement.textContent = `Precio total: $${newTotalPrice}`;
+
+            // Actualizar el total general
+            updateTotal();
+        });
+    });
+
+    decrementButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const productId = button.getAttribute('data-product-id');
+            const quantityInput = document.getElementById(`quantity-${productId}`);
+            let currentQuantity = parseInt(quantityInput.value);
+            if (currentQuantity > 1) {
+                quantityInput.value = currentQuantity - 1;
+
+                // Actualizar el precio total del producto
+                const precioTotalElement = document.getElementById(`total-id-${productId}`);
+                const productPrice = parseFloat(precioTotalElement.textContent.match(/[\d.,]+/)[0]) / currentQuantity; // Obtener el precio unitario
+                const newTotalPrice = (productPrice * (currentQuantity - 1)).toFixed(2); // Calcular el nuevo precio total
+                precioTotalElement.textContent = `Precio total: $${newTotalPrice}`;
+
+                // Actualizar el total general
+                updateTotal();
+            }
+        });
+    });
+
+    const removeButtons = document.querySelectorAll('.remove-product');
+
+    removeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productDiv = this.closest('.producto-agregado');
+            if (productDiv) {
+                productDiv.remove();
+                updateTotal(); // Actualizar el total general al eliminar un producto
+            }
+        });
+    });
+}
