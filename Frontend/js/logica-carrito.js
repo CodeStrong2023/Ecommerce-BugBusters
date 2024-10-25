@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
                     <div class="rounded-lg md:w-2/3">
                         <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start" data-product-id="${producto.id}">
-                            <img src="${producto.imagenUrl}" alt="product-image" class="w-full rounded-lg sm:w-40" />
+                            <img src="http://localhost:8080${producto.imagenUrl}" alt="product-image" class="w-full rounded-lg sm:w-40" />
                             <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                                 <div class="mt-5 sm:mt-0">
                                     <h2 class="text-lg font-bold text-gray-900">${producto.nombre}</h2>

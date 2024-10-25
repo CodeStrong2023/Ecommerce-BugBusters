@@ -93,6 +93,15 @@ const abrirModal = (producto) => {
 }
 
 const agregarAlCarrito = (producto) => {
+
+    //validamos que el usario esté registrado
+    const token = sessionStorage.getItem("token");
+
+    if(!token){
+        window.location.href = "../login.html";
+        return;
+    }
+
     // Obtén el carrito actual del localStorage o crea uno nuevo
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     
