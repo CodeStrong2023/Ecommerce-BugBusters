@@ -7,46 +7,47 @@
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
+    <div id="errorContainer" style="display: none; color: red; font-size: 70px; margin-top: 100px;"></div>
+    <div id="dashboardContainer" style="display: none;" class="contenedor">
+        <h1>Dashboard de Productos</h1>
+
+        <!-- Formulario para actualizar productos -->
+        <form id="productForm">
+            <input type="text" id="productId" readonly class="hidden">
+            <input type="text" id="productName" placeholder="Nombre del Producto" required>
+            <textarea id="productDescription" placeholder="Descripción" required></textarea>
+            <input type="number" id="productPrice" placeholder="Precio" required>
+            <select name="categoria" id="productCategory">
+                <option value="categoria">Categorias</option>
+                <option value="Guitarras">Guitarras</option>
+                <option value="Bajos">Bajos</option>
+                <option value="Teclados">Teclados</option>
+                <option value="Baterias">Baterias</option>
+                <option value="Accesorios">Accesorios</option>
+            </select>
+            <input type="file" id="productImage" accept="image/*" required>
+            <button type="submit" class="btn-guardar">Guardar</button>
+        </form>
+    
+        <!-- Tabla para mostrar productos -->
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se insertarán dinámicamente las filas de productos -->
+            </tbody>
+        </table>
+    </div>
      
-    <h1>Dashboard de Productos</h1>
-
-    <!-- Formulario para actualizar productos -->
-    <form id="productForm">
-        <input type="text" id="productId" readonly class="hidden">
-        <input type="text" id="productName" placeholder="Nombre del Producto" required>
-        <textarea id="productDescription" placeholder="Descripción" required></textarea>
-        <input type="number" id="productPrice" placeholder="Precio" required>
-        <select name="categoria" id="productCategory">
-            <option value="categoria">Categorias</option>
-            <option value="Guitarras">Guitarras</option>
-            <option value="Bajos">Bajos</option>
-            <option value="Teclados">Teclados</option>
-            <option value="Baterias">Baterias</option>
-            <option value="Accesorios">Accesorios</option>
-        </select>
-        <input type="file" id="productImage" accept="image/*" required>
-        <button type="submit" class="btn-guardar">Guardar</button>
-    </form>
-
-    <!-- Tabla para mostrar productos -->
-    <table id="productTable">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Imagen</th>
-                <th>Producto</th>
-                <th>Descripción</th>
-                <th>Precio</th>
-                <th>Categoría</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Aquí se insertarán dinámicamente las filas de productos -->
-        </tbody>
-    </table>
-
     <script src="js/dashboard.js"></script>
-    <script src="js/header-update.js"></script>
 </body>
 </html>

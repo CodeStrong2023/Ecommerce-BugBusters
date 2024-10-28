@@ -16,7 +16,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @PostMapping("") //modificar ruta según el front
+    @PostMapping() //modificar ruta según el front
     public Map<String, String> registrarUsuario(@RequestBody @Valid UsuarioRegistroDTO usuarioRegistroDTO) {
         usuarioService.registrarUsuario(usuarioRegistroDTO);
         return Map.of("message", "Usuario registrado con éxito");

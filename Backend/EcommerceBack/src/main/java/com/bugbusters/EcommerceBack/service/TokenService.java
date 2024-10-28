@@ -24,6 +24,7 @@ public class TokenService {
                     .withIssuer("Clave de Sol")
                     .withSubject(usuario.getEmail())
                     .withClaim("Id", usuario.getId())
+                    .withClaim("rol", usuario.getRol())
                     .withExpiresAt(generarFechaExpiracion())
                     .sign(algorithm);
         } catch (JWTCreationException exception) {

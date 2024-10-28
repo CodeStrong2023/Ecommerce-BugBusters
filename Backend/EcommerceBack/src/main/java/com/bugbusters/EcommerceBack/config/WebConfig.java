@@ -27,6 +27,7 @@ public class WebConfig implements WebMvcConfigurer{
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         // Esto permite acceder a imágenes en public/imagenes del backend
         registry.addResourceHandler("/imagenes/**")
-                .addResourceLocations("classpath:/public/imagenes/");
+                .addResourceLocations("classpath:/public/imagenes/", "file:imagenes/");
+
     }
 }

@@ -65,10 +65,10 @@ public class SecurityConfig {
                 .authorizeRequests(auth -> auth
                         .requestMatchers(HttpMethod.POST, "/usuarios", "/iniciar-sesion").permitAll() // Permitir estas rutas
                         .requestMatchers(HttpMethod.GET, "/productos/**", "/imagenes/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/admin").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/admin").permitAll()
-                        .requestMatchers(HttpMethod.DELETE, "/admin/{id}").permitAll()
-                        .requestMatchers(HttpMethod.PUT, "/admin").permitAll()
+//                        .requestMatchers(HttpMethod.GET, "/admin").permitAll()
+//                        .requestMatchers(HttpMethod.POST, "/admin").permitAll()
+//                        .requestMatchers(HttpMethod.DELETE, "/admin/{id}").permitAll()
+//                        .requestMatchers(HttpMethod.PUT, "/admin").permitAll()
                         .anyRequest().authenticated()) // Otras rutas requieren autenticación
                 .addFilterBefore(new SecurityFilter(tokenService, usuarioRepository), UsernamePasswordAuthenticationFilter.class)
                 .build();

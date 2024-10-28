@@ -48,8 +48,9 @@ public class ProductoService {
     }
 
     public RespuestaProductoDTO saveProducto(CrearProductoDTO productoDTO){
-        String nombreImagen = guardarImagen(productoDTO.imagen());
+//        String nombreImagen = guardarImagen(productoDTO.imagen());
 
+        String nombreImagen = saveImage(productoDTO.imagen());
         Producto producto = new Producto();
         producto.setNombre(productoDTO.nombre());
         producto.setDescripcion(productoDTO.descripcion());
@@ -67,32 +68,56 @@ public class ProductoService {
 
     }
 
-    private String guardarImagen(MultipartFile imagen) {
-        Path rutaDirectorio = Paths.get(rutaImagenes);
-        if (!Files.exists(rutaDirectorio)) {
-            try {
-                Files.createDirectories(rutaDirectorio);
-            } catch (IOException e) {
-                throw new RuntimeException("Error al crear el directorio: " + e.getMessage(), e);
-            }
-        }
+//    private String guardarImagen(MultipartFile imagen) {
+//        Path rutaDirectorio = Paths.get(rutaImagenes);
+//        if (!Files.exists(rutaDirectorio)) {
+//            try {
+//                Files.createDirectories(rutaDirectorio);
+//            } catch (IOException e) {
+//                throw new RuntimeException("Error al crear el directorio: " + e.getMessage(), e);
+//            }
+//        }
+//
+//        String nombreOriginal = imagen.getOriginalFilename();
+//
+//        // Generar un nombre único para el archivo
+//        String nombreArchivo = UUID.randomUUID().toString() + "_" + nombreOriginal;
+//
+//        // Ruta completa donde se guardará la imagen
+//        Path rutaCompleta = rutaDirectorio.resolve(nombreArchivo);
+//
+//        // Guardar la imagen en el sistema de archivos
+//        try {
+//            Files.copy(imagen.getInputStream(), rutaCompleta, StandardCopyOption.REPLACE_EXISTING);
+//            System.out.println(rutaCompleta);
+//        } catch (IOException e) {
+//            throw new RuntimeException("Error al guardar la imagen: " + e.getMessage(), e);
+//        }
+//
+//        return nombreArchivo;
+//    }
 
-        String nombreOriginal = imagen.getOriginalFilename();
-
-        // Generar un nombre único para el archivo
-        String nombreArchivo = UUID.randomUUID().toString() + "_" + nombreOriginal;
-
-        // Ruta completa donde se guardará la imagen
-        Path rutaCompleta = rutaDirectorio.resolve(nombreArchivo);
-
-        // Guardar la imagen en el sistema de archivos
+    private String saveImage(MultipartFile imagen) {
+        String uploadDir = "imagenes/";  // Directorio de destino
         try {
-            Files.copy(imagen.getInputStream(), rutaCompleta, StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException e) {
-            throw new RuntimeException("Error al guardar la imagen: " + e.getMessage(), e);
-        }
+            // Verificar si el directorio existe, y si no, crearlo
+            Path uploadPath = Paths.get(uploadDir);
+            if (!Files.exists(uploadPath)) {
+                Files.createDirectories(uploadPath);
+            }
 
-        return nombreArchivo;
+            // Definir la ruta completa del archivo
+            Path filePath = uploadPath.resolve(imagen.getOriginalFilename());
+
+            // Escribir el archivo en el directorio especificado
+            Files.write(filePath, imagen.getBytes());
+
+
+            return imagen.getOriginalFilename();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;  // Retornar null en caso de error
+        }
     }
 
 
@@ -107,8 +132,9 @@ public class ProductoService {
 
         // Solo guardar una nueva imagen si se proporciona una
         if (productoDTO.imagen() != null && !productoDTO.imagen().isEmpty()) {
-            String nombreImagen = guardarImagen(productoDTO.imagen());
-            producto.setImagenUrl("imagenes/" + nombreImagen);
+//            String nombreImagen = guardarImagen(productoDTO.imagen());
+            String nombreImagen = saveImage(productoDTO.imagen());
+            producto.setImagenUrl("/imagenes/" + nombreImagen);
         }
 
         producto.setNombre(productoDTO.nombre());
@@ -137,7 +163,7 @@ public class ProductoService {
         String nombreImagen = filePath.getFileName().toString();
 
         // Eliminar la imagen del servidor
-        Path fullPath = Paths.get(rutaImagenes).resolve(nombreImagen).normalize();
+        Path fullPath = Paths.get("imagenes/").resolve(nombreImagen).normalize();
         File file = fullPath.toFile();
         if (file.exists()) {
             if (!file.delete()) {
