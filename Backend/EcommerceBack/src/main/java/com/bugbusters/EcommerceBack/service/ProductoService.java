@@ -8,6 +8,7 @@ import com.bugbusters.EcommerceBack.entity.Categoria;
 import com.bugbusters.EcommerceBack.entity.Producto;
 import com.bugbusters.EcommerceBack.repository.dashboard.ICategoriaRepository;
 import com.bugbusters.EcommerceBack.repository.dashboard.IProductoRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,6 +20,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -94,25 +96,34 @@ public class ProductoService {
     }
 
 
-    public RespuestaProductoDTO updateProducto(ActualizarProductoDTO productoDTO){
-        Producto producto = productoRepository.findById(productoDTO.id()).get();
+    public RespuestaProductoDTO updateProducto(ActualizarProductoDTO productoDTO) {
+        Optional<Producto> optionalProducto = productoRepository.findById(productoDTO.id());
 
-        String nombreImagen = guardarImagen(productoDTO.imagen());
+        if (optionalProducto.isEmpty()) {
+            throw new EntityNotFoundException("Producto no encontrado con ID: " + productoDTO.id());
+        }
+
+        Producto producto = optionalProducto.get();
+
+        // Solo guardar una nueva imagen si se proporciona una
+        if (productoDTO.imagen() != null && !productoDTO.imagen().isEmpty()) {
+            String nombreImagen = guardarImagen(productoDTO.imagen());
+            producto.setImagenUrl("imagenes/" + nombreImagen);
+        }
 
         producto.setNombre(productoDTO.nombre());
         producto.setDescripcion(productoDTO.descripcion());
         producto.setPrecio(productoDTO.precio());
-        producto.setImagenUrl("imagenes/" + nombreImagen);
 
         Categoria categoria = categoriaRepository.findByNombre(productoDTO.categoria().nombre());
         producto.setCategoria(categoria);
 
         productoRepository.save(producto);
 
-        return new RespuestaProductoDTO(producto.getId(), producto.getNombre(), producto.getDescripcion(), producto.getPrecio(),
-                producto.getImagenUrl(), new CategoriaDTO(producto.getCategoria().getNombre()));
-
+        return new RespuestaProductoDTO(producto.getId(), producto.getNombre(), producto.getDescripcion(),
+                producto.getPrecio(), producto.getImagenUrl(), new CategoriaDTO(producto.getCategoria().getNombre()));
     }
+
 
     public void deleteProducto(Long id){
         Producto producto = productoRepository.findById(id).get();
