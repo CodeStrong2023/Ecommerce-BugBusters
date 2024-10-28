@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Productos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Dashboard de Productos</h1>
+
+    <!-- Formulario para actualizar productos -->
+    <form id="productForm">
+        <input type="text" id="productName" placeholder="Nombre del Producto" required>
+        <textarea id="productDescription" placeholder="Descripción" required></textarea>
+        <input type="number" id="productPrice" placeholder="Precio" required>
+        <input type="file" id="productImage" accept="image/*">
+        <button type="submit">Guardar</button>
+    </form>
+
+    <!-- Tabla para mostrar productos -->
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Imagen</th>
+                <th>Producto</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se insertarán dinámicamente las filas de productos -->
+        </tbody>
+    </table>
+
+    <script src="app.js"></script>
+</body>
+</html>
