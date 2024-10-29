@@ -48,11 +48,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         updateTotal(); // Calcular el total general inicial
+        updateCartCounter();
         setupEventListeners(); // Configurar los oyentes de eventos
     } else {
         console.log('No hay productos en el carrito');
     }
 });
+
+//Función para actualizar el contador de productos del carrito
+function updateCartCounter() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let totalItems = 0;
+
+    carrito.forEach(producto => {
+        totalItems += producto.cantidad; 
+    });
+
+    const cartCounter = document.getElementById('cart-counter');
+    cartCounter.textContent = totalItems;
+    cartCounter.style.display = totalItems > 0 ? 'block' : 'none';
+}
 
 // Función para actualizar el precio total al incrementar o decrementar
 function updateTotal() {
@@ -77,6 +92,7 @@ function eliminarProducto(productoid) {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const carritoActualizado = carrito.filter(item => item.id !== Number(productoid));
     localStorage.setItem('carrito', JSON.stringify(carritoActualizado));
+    updateCartCounter();
 }
 
 // Función para configurar oyentes de eventos para incrementar y decrementar
@@ -97,8 +113,11 @@ function setupEventListeners() {
             const newTotalPrice = (productPrice * (currentQuantity + 1)).toFixed(2); // Calcular el nuevo precio total
             precioTotalElement.textContent = `Precio total: $${newTotalPrice}`;
 
+            actualizarCarritoEnLocalStorage(productId, currentQuantity + 1);
+
             // Actualizar el total general
             updateTotal();
+            updateCartCounter();
         });
     });
 
@@ -116,8 +135,11 @@ function setupEventListeners() {
                 const newTotalPrice = (productPrice * (currentQuantity - 1)).toFixed(2); // Calcular el nuevo precio total
                 precioTotalElement.textContent = `Precio total: $${newTotalPrice}`;
 
+                actualizarCarritoEnLocalStorage(productId, currentQuantity - 1);
+
                 // Actualizar el total general
                 updateTotal();
+                updateCartCounter();
             }
         });
     });
@@ -133,9 +155,18 @@ function setupEventListeners() {
                 eliminarProducto(productoId)
                 productDiv.remove();
                 updateTotal(); // Actualizar el total general al eliminar un producto
+                updateCartCounter();
             }
         });
     });
 
 }
-
+ //Actualiza el carrito en el local storage
+ function actualizarCarritoEnLocalStorage(productId, nuevaCantidad) {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const producto = carrito.find(item => item.id === Number(productId));
+    if (producto) {
+        producto.cantidad = nuevaCantidad; 
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+}

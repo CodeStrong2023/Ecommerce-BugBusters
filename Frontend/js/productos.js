@@ -98,7 +98,7 @@ const agregarAlCarrito = (producto) => {
     const token = sessionStorage.getItem("token");
 
     if(!token){
-        window.location.href = "../login.html";
+        window.location.href = "login.html";
         return;
     }
 
@@ -116,5 +116,5 @@ const agregarAlCarrito = (producto) => {
 
     // Guarda el carrito actualizado en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert(`${producto.nombre} ha sido agregado al carrito!`);
+    // alert(`${producto.nombre} ha sido agregado al carrito!`);
 }

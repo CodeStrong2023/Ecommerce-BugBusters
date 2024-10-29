@@ -50,9 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const carrito = document.createElement("a");
         carrito.innerHTML = `
-                <a href="carrito.html" class="block px-4 py-2 text-sm text-gray-700 hover:text-custom-orange">
+                <a href="carrito.html">
                     <img src="./assets/carrito-icono.png" alt="carrito de compras" id="carrito">
                 </a>
+                <span class="cart-counter" id="cart-counter">0</span>
         `;    
 
         // Añade todos los elementos a la navegación
@@ -71,5 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function logout() {
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('usuario');
-    window.location.href = "./index.html"; 
+    localStorage.removeItem("token");
+    localStorage.removeItem("carrito");
+    window.location.href = "index.html"; 
 }

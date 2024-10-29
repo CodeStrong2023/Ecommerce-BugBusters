@@ -34,12 +34,13 @@
         </nav>
     </header>
 
+
     <!-- Sección Productos -->
-    <section id="productos" class="bg-custom-very-light-brown py-10 flex justify-center">
+    <section id="productos" class="bg-custom-very-light-brown productos-section">
         <div class="container mx-auto flex gap-10">
             <!-- Sidebar de Filtros -->
-            <aside class="w-1/4 bg-white rounded-lg p-4 shadow-lg">
-                <h2 class="text-lg font-bold mb-4">Filtros</h2>
+            <aside class="w-1/4 bg-custom-light-brown rounded-lg p-4 filtros">
+                <h2 class="text-lg font-bold mb-4" style="color: white;">Productos</h2>
                 <ul class="space-y-2">
                     <li><a href="#" class="block text-custom-text-dark hover:text-custom-orange categoria" data-categoria="Guitarras">Guitarras</a></li>
                     <li><a href="#" class="block text-custom-text-dark hover:text-custom-orange categoria" data-categoria="Bajos">Bajos</a></li>
@@ -52,7 +53,7 @@
             
 
             <!-- Productos -->
-            <section class="text-gray-600 body-font w-3/4 px-10" id="productos-container" style="display: flex; flex-wrap: wrap;">
+            <section class="text-gray-600 body-font w-3/4 px-10" id="productos-container">
 
             
             
@@ -65,9 +66,9 @@
                         <img id="imagen" />
                     </div>
                     <div class="modal-info">
-                        <h2 id="nombre" style="color: black;"></h2>
-                        <p id="descripcion" style="color: black;"></p>
-                        <p id="precio" style="color: black;"></p>
+                        <h2 id="nombre"></h2>
+                        <p id="descripcion"></p>
+                        <p id="precio"></p>
                         <button id="agregarCarrito">Agregar al Carrito</button>
                     </div>
                     <p id="cerrar-modal" class="close">X</p>
@@ -87,6 +88,7 @@
     
     <script src="js/productos.js"></script>
     <script src="js/header-update.js"></script>
+    <script src="js/logica-carrito.js"></script>
 </body>
 
 </html>
