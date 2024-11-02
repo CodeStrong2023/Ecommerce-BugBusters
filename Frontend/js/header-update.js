@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const navLinks = document.createElement('ul');
         navLinks.className = 'flex space-x-4';
         navLinks.innerHTML = `
-            <li><a href="index.html" class="hover:text-custom-orange">Inicio</a></li>
-            <li><a href="sobre-nosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a></li>
-            <li><a href="productos.html" class="hover:text-custom-orange">Productos</a></li>
-            <li><a href="contacto.html" class="hover:text-custom-orange">Contacto</a></li>`;
+            <li style="color: white;"><a href="index.html" class="hover:text-custom-orange">Inicio</a></li>
+            <li style="color: white;"><a href="sobre-nosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a></li>
+            <li style="color: white;"><a href="productos.html" class="hover:text-custom-orange">Productos</a></li>
+            <li style="color: white;"><a href="contacto.html" class="hover:text-custom-orange">Contacto</a></li>`;
 
         // Crear el contenedor del dropdown
         const seccionUsuario = document.createElement('div');
