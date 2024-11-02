@@ -53,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.log('No hay productos en el carrito');
     }
+
+    document.getElementById("btn-mp").addEventListener("click", iniciarPago);
 });
 
 //Función para actualizar el contador de productos del carrito
@@ -170,6 +172,7 @@ function setupEventListeners() {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 }
+
 
 async function iniciarPago() {
     const carritoJSON = localStorage.getItem('carrito');
