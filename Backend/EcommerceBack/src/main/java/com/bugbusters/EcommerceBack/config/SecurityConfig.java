@@ -63,7 +63,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable()) // Deshabilitar CSRF
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Stateless
                 .authorizeRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/usuarios", "/iniciar-sesion").permitAll() // Permitir estas rutas
+                        .requestMatchers(HttpMethod.POST, "/usuarios", "/iniciar-sesion", "/create_preference").permitAll() // Permitir estas rutas
                         .requestMatchers(HttpMethod.GET, "/productos/**", "/imagenes/**").permitAll()
 //                        .requestMatchers(HttpMethod.GET, "/admin").permitAll()
 //                        .requestMatchers(HttpMethod.POST, "/admin").permitAll()

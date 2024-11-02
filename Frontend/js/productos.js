@@ -118,3 +118,16 @@ const agregarAlCarrito = (producto) => {
     localStorage.setItem('carrito', JSON.stringify(carrito));
     // alert(`${producto.nombre} ha sido agregado al carrito!`);
 }
+
+//limpia el carrito luego de la compra
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pagoExitoso = urlParams.get('pagoExitoso'); 
+
+    if (pagoExitoso === 'true') {
+        // Borrar el carrito del localStorage
+        localStorage.removeItem('carrito');
+
+    }
+
+});

@@ -170,3 +170,31 @@ function setupEventListeners() {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 }
+
+async function iniciarPago() {
+    const carritoJSON = localStorage.getItem('carrito');
+    const carrito = JSON.parse(carritoJSON);
+
+    const productosConCantidad = carrito.map(producto => ({
+        id: producto.id,
+        nombre: producto.nombre,
+        precio: producto.precio,
+        cantidad: producto.cantidad 
+    }));
+
+    try {
+        const response = await fetch('http://localhost:8080/create_preference', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(productosConCantidad)
+        });
+
+        const urlDePago = await response.text();
+        console.log(urlDePago);
+        window.location.href = urlDePago;
+    } catch (error) {
+        console.error('Error al iniciar el pago:', error);
+    }
+}
