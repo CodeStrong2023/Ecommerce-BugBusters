@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Clave de Sol</title>
-    <link rel="icon" href="css/logo solo.png" type="image/png">
+    <link rel="icon" href="assets/logo solo.png" type="image/png">
     <link rel="stylesheet" href="css/styles.css"> <!-- Enlace al CSS compilado -->
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> <!-- Fuentes llamativas -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet"> <!-- Fuentes llamativas -->
+    <link rel="stylesheet" href="css/estilos.css"> <!-- Estilos css personalizados -->
 </head>
 
 <body class="bg-custom-dark-brown text-custom-text-light">
     <!-- Barra de Tareas -->
-    <header class="bg-gray-800 text-white py-4">
-        <nav class="flex justify-between items-center p-4">
-            <div class="text-3xl font-bold">
-                <img src="css/logo solo.png" alt="Logo Clave de Sol" class="mr-2 object-contain" style="width: 90px; height: 90px;">
+    <header class="bg-custom-light-brown">
+        <nav class="flex justify-between items-center">
+            <div class="text-3xl font-bold flex items-center">
+                <img src="assets/logo solo.png" alt="Logo Clave de Sol" class="mr-2 object-contain"
+                    style="width: 90px; height: 90px;">
+                <h3><a href="index.html">Clave de Sol</a></h3>
             </div>
             <ul class="flex space-x-4">
                 <li><a href="index.html" class="hover:text-custom-orange">Inicio</a></li>
                 <li><a href="sobre-nosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a></li>
                 <li><a href="productos.html" class="hover:text-custom-orange">Productos</a></li>
-                <li><a href="carrito.html" class="hover:text-custom-orange">Carrito de Compras</a></li>
                 <li><a href="contacto.html" class="hover:text-custom-orange">Contacto</a></li>
+            </ul>
+            <ul class="flex space-x-4">
                 <li><a href="login.html" class="hover:text-custom-orange">Iniciar Sesión</a></li>
                 <li><a href="register.html" class="hover:text-custom-orange">Registrarse</a></li>
             </ul>
@@ -30,63 +35,76 @@
     </header>
 
     <!-- Sección Contacto -->
-    <section id="contacto" class="bg-custom-light-brown py-10">
+    <section id="contacto" class="bg-custom-very-light-brown py-8">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4 font-Montserrat text-custom-orange">Contacto</h2>
-            <p class="text-lg mb-8 font-Montserrat text-custom-text-dark">Si tienes preguntas, ¡no dudes en contactarnos!</p>
+            <p class="text-lg mb-8 font-Montserrat text-custom-text-dark">Si tienes preguntas, ¡no dudes en
+                contactarnos!</p>
 
             <!-- Email -->
             <div class="flex items-center justify-center mb-4">
                 <span class="mr-2">
-                    <img src="css/correo logo.png" alt="Email" style="height: 1.5rem; width: 1.5rem;" class="inline-block">
+                    <img src="assets/correo logo.png" alt="Email" style="height: 1.5rem; width: 1.5rem;"
+                        class="inline-block">
                 </span>
-                <p class="text-lg font-Montserrat text-custom-text-dark">Email: contacto@clavedesol.com</p>
+                <p class="text-lg font-Montserrat text-white">Email: contacto@clavedesol.com</p>
             </div>
 
             <!-- Ubicación -->
             <div class="flex items-center justify-center mb-4">
                 <span class="mr-2">
-                    <img src="css/ubicacion.png" alt="Ubicación" style="height: 1.5rem; width: 1.5rem;" class="inline-block">
+                    <img src="assets/ubicacion.png" alt="Ubicación" style="height: 1.5rem; width: 1.5rem;"
+                        class="inline-block">
                 </span>
-                <p class="text-lg font-Montserrat text-custom-text-dark">Ubicación: San Rafael, Mendoza</p>
+                <p class="text-lg font-Montserrat text-white">Ubicación: San Rafael, Mendoza</p>
             </div>
 
             <!-- Teléfono -->
             <div class="flex items-center justify-center mb-4">
                 <span class="mr-2">
-                    <img src="css/telefono-logo.png" alt="Teléfono" style="height: 1.5rem; width: 1.5rem;" class="inline-block">
+                    <img src="assets/telefono-logo.png" alt="Teléfono" style="height: 1.5rem; width: 1.5rem;"
+                        class="inline-block">
                 </span>
-                <p class="text-lg font-Montserrat text-custom-text-dark">Teléfono: +54 9 1234 5678</p>
+                <p class="text-lg font-Montserrat text-white">Teléfono: +54 9 1234 5678</p>
             </div>
 
             <!-- Formulario de Contacto -->
-            <div class="my-form">
+            <div class="my-form mb-8">
                 <div class="form-group">
-                  <input type="text" class="form-control rounded" placeholder="Nombre">
+                    <input type="text" class="form-control rounded" placeholder="Nombre">
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control rounded" placeholder="Email">
+                    <input type="email" class="form-control rounded" placeholder="Email">
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control rounded" placeholder="Consulta"></textarea>
+                    <textarea class="form-control rounded" placeholder="Consulta"></textarea>
                 </div>
-                <div class="grid grid-cols-1 gap-4">
-                    <div class="flex items-center justify-center">
-                      <button class="bg-custom-orange text-white font-bold py-2 px-4 rounded-lg hover:bg-opacity-80 w-full md:w-1/2 my-custom-button">Enviar</button>
-                    </div>
-                  </div>
+                <!-- Botón Enviar -->
+                <div class="flex justify-center">
+                    <button
+                        class="bg-custom-orange text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-80 mx-auto">
+                        Enviar
+                    </button>
+                </div>
+            </div>
 
-
-                  <div class="flex items-center justify-center mb-4">
-                    <section class="map-section bg-gray-200 p-4">
-                    <iframe src="https://www.google.com/maps/embed?..." width="80%" height="150" frameborder="0" style="border:0;" allowfullscreen></iframe>
-                </div>
-    <!-- Sección Final -->
-    <footer class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white py-4">
-        <div class="bg-custom-dark-brown text-center py-4">
-            © 2024 Clave de Sol. Todos los derechos reservados.
+            <!-- Mapa -->
+            <div class="flex justify-center mb-4">
+                <section class="map-section bg-gray-200 p-4 rounded-lg" style="width: 80%;">
+                    <iframe src="https://www.google.com/maps/embed?..." width="100%" height="150" frameborder="0"
+                        style="border:0;" allowfullscreen></iframe>
+                </section>
+            </div>
         </div>
-      </footer>
+    </section>
+    
+    <!-- Sección Final -->
+    <footer class="bg-custom-light-brown py-4 text-center">
+        <p class="text-custom-text-light">
+            © 2024 Clave de Sol. Todos los derechos reservados.
+        </p>
+        <p><a style="color: #F2A007;" href="./sobreNosotros/aboutUs.html">Desarrolladores</a></p>
+    </footer>
 
 </body>
 

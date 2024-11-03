@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - Clave de Sol</title>
-    <link rel="icon" href="css/logo solo.png" type="image/png">
+    <link rel="icon" href="assets/logo solo.png" type="image/png">
     <link rel="stylesheet" href="css/styles.css"> <!-- Enlace al CSS compilado -->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap"
         rel="stylesheet"> <!-- Fuentes llamativas -->
+    <link rel="stylesheet" href="css/estilos.css"> <!-- Estilos css personalizados -->
     <style>
         .product-card {
             transition: transform 0.2s;
@@ -20,19 +21,23 @@
     </style>
 </head>
 
-<body class="bg-custom-dark-brown text-custom-text-light">
+<body class="bg-custom-dark-brown text-custom-text-light" style="height: 100vh; display: flex; flex-direction: column;">
     <!-- Barra de Tareas -->
     <header class="bg-custom-light-brown">
         <nav class="flex justify-between items-center">
-            <div class="text-3xl font-bold">
-                <img src="css/logo solo.png" alt="Logo Clave de Sol" class="mr-2 object-contain" style="width: 90px; height: 90px;">
+            <div class="text-3xl font-bold flex items-center">
+                <img src="assets/logo solo.png" alt="Logo Clave de Sol" class="mr-2 object-contain"
+                    style="width: 90px; height: 90px;">
+                <h3><a href="index.html">Clave de Sol</a></h3>
             </div>
             <ul class="flex space-x-4">
                 <li><a href="index.html" class="hover:text-custom-orange">Inicio</a></li>
                 <li><a href="sobre-nosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a></li>
                 <li><a href="productos.html" class="hover:text-custom-orange">Productos</a></li>
-                <li><a href="carrito.html" class="hover:text-custom-orange">Carrito de Compras</a></li>
+                <!-- <li><a href="carrito.html" class="hover:text-custom-orange">Carrito de Compras</a></li> -->
                 <li><a href="contacto.html" class="hover:text-custom-orange">Contacto</a></li>
+            </ul>
+            <ul class="flex space-x-4">
                 <li><a href="login.html" class="hover:text-custom-orange">Iniciar Sesión</a></li>
                 <li><a href="register.html" class="hover:text-custom-orange">Registrarse</a></li>
             </ul>
@@ -40,7 +45,7 @@
     </header>
 
     <!-- Sección Productos -->
-    <section id="productos" class="bg-custom-light-brown py-10">
+    <section id="productos" class="bg-custom-very-light-brown py-10" style="flex-grow: 1;">
         <div class="container mx-auto flex">
             <!-- Sidebar de Filtros -->
             <aside class="w-1/4 bg-white rounded-lg p-4 mr-4 shadow-lg">
@@ -57,21 +62,25 @@
             <!-- Productos -->
             <div class="flex-1">
                 <h2 class="text-3xl font-bold mb-4 font-Montserrat text-custom-orange">Nuestros Productos</h2>
-                <p class="text-lg mb-4 font-Montserrat">Aquí puedes encontrar una amplia gama de instrumentos musicales.</p>
+                <p class="text-lg mb-4 font-Montserrat">Aquí puedes encontrar una amplia gama de instrumentos musicales.
+                </p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="product-card bg-white rounded-lg p-4 shadow-lg cursor-pointer" onclick="window.location='producto1.html'">
+                    <div class="product-card bg-white rounded-lg p-4 shadow-lg cursor-pointer"
+                        onclick="window.location='producto1.html'">
                         <img src="img/guitarra.jpg" alt="Guitarra Acústica" class="mb-2 rounded">
                         <h3 class="font-bold text-lg font-Montserrat">Guitarra Acústica</h3>
                         <p class="font-Montserrat">Perfecta para cualquier estilo musical.</p>
                         <p class="font-bold text-xl mt-2">$300</p>
                     </div>
-                    <div class="product-card bg-white rounded-lg p-4 shadow-lg cursor-pointer" onclick="window.location='producto2.html'">
+                    <div class="product-card bg-white rounded-lg p-4 shadow-lg cursor-pointer"
+                        onclick="window.location='producto2.html'">
                         <img src="img/piano.jpg" alt="Piano Digital" class="mb-2 rounded">
                         <h3 class="font-bold text-lg font-Montserrat">Piano Digital</h3>
                         <p class="font-Montserrat">Calidad de sonido excepcional.</p>
                         <p class="font-bold text-xl mt-2">$500</p>
                     </div>
-                    <div class="product-card bg-white rounded-lg p-4 shadow-lg cursor-pointer" onclick="window.location='producto3.html'">
+                    <div class="product-card bg-white rounded-lg p-4 shadow-lg cursor-pointer"
+                        onclick="window.location='producto3.html'">
                         <img src="img/bateria.jpg" alt="Batería Eléctrica" class="mb-2 rounded">
                         <h3 class="font-bold text-lg font-Montserrat">Batería Eléctrica</h3>
                         <p class="font-Montserrat">Para los amantes del ritmo.</p>
@@ -84,9 +93,10 @@
 
     <!-- Sección Final -->
     <footer class="bg-custom-light-brown py-4 text-center">
-        <p class="text-custom-text-dark">
+        <p class="text-custom-text-light">
             © 2024 Clave de Sol. Todos los derechos reservados.
         </p>
+        <p><a style="color: #F2A007;" href="./sobreNosotros/aboutUs.html">Desarrolladores</a></p>
     </footer>
 
 </body>

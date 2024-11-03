@@ -1,59 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Clave de Sol</title>
-    <link rel="icon" href="css/logo solo.png" type="image/png">
-    <link rel="stylesheet" href="css/styles.css"> <!-- Enlace al CSS compilado -->
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> <!-- Fuentes llamativas -->
+    <title>Sobre Nosotros - Clave de Sol</title>
+    <link rel="icon" href="assets/logo solo.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body class="bg-custom-dark-brown text-custom-text-light">
-<header class="bg-custom-light-brown py-1"> 
-    <div class="container mx-auto flex justify-center">
-    </div>
-</header>
 
+<body class="bg-custom-dark-brown text-custom-text-light" style="display: flex; flex-direction: column; height: 100vh;">
 
-    
     <!-- Barra de Tareas -->
     <header class="bg-custom-light-brown">
         <nav class="flex justify-between items-center">
-            <div class="text-3xl font-bold">
-                <img src="css/logo solo.png" alt="Logo Clave de Sol" class="mr-2 object-contain" style="width: 90px; height: 90px;">
-
+            <div class="text-3xl font-bold flex items-center">
+                <img src="assets/logo solo.png" alt="Logo Clave de Sol" class="mr-2 object-contain" style="width: 90px; height: 90px;">
+                <h3><a href="index.html">Clave de Sol</a></h3>
             </div>
             <ul class="flex space-x-4">
                 <li><a href="index.html" class="hover:text-custom-orange">Inicio</a></li>
                 <li><a href="sobre-nosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a></li>
                 <li><a href="productos.html" class="hover:text-custom-orange">Productos</a></li>
-                <li><a href="carrito.html" class="hover:text-custom-orange">Carrito de Compras</a></li>
                 <li><a href="contacto.html" class="hover:text-custom-orange">Contacto</a></li>
+            </ul>
+            <ul class="flex space-x-4">
                 <li><a href="login.html" class="hover:text-custom-orange">Iniciar Sesión</a></li>
                 <li><a href="register.html" class="hover:text-custom-orange">Registrarse</a></li>
+            </ul>
         </nav>
     </header>
 
-<!-- Sección Sobre Nosotros -->
-<section id="sobre-nosotros" class="bg-custom-very-light-brown py-10">
-    <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-4 font-Montserrat">¿Quiénes Somos?</h2>
-        <p class="text-lg mb-4 font-Montserrat">
-            Somos una tienda dedicada a ofrecer los mejores instrumentos musicales.
-        </p>
-        <p class="text-lg font-Montserrat">
-            Tu satisfacción es nuestra prioridad.
-        </p>
-    </div>
-</section>
+    <!-- Sección Sobre Nosotros -->
+    <section id="sobre-nosotros" class="bg-custom-very-light-brown" style="flex-grow: 1;">
+        <div class="container mx-auto text-center" style="margin-top: 70px;">
+            <h2 class="text-3xl font-bold mb-4 font-Montserrat">¿Quiénes Somos?</h2>
+            <p class="text-lg mb-4 font-Montserrat">Somos una tienda dedicada a ofrecer los mejores instrumentos musicales.</p>
+            <p class="text-lg font-Montserrat">Tu satisfacción es nuestra prioridad.</p>
+        </div>
 
-<!-- Sección Final -->
-<footer class="bg-custom-light-brown py-4 text-center">
-    <p class="text-custom-text-dark">
-        © 2024 Clave de Sol. Todos los derechos reservados.
-    </p>
-</footer>
+        <section style="display: flex; justify-content: space-between; width: 90%; margin: 40px auto;">
+            <div class="bg-custom-dark-brown rounded-lg p-4 shadow-lg cursor-pointer" style="width: 30%;">
+                <h2 class="font-bold text-3xl font-Montserrat">Historia</h2>
+                <p class="font-Montserrat">Fundada en 2016, Clave de Sol nació con la pasión de ofrecer instrumentos musicales de calidad para músicos de todos los niveles. Nos hemos dedicado a brindar un servicio excepcional, apoyando el crecimiento de nuestros clientes en su camino musical.</p>
+                <img src="partitura.png" alt="Partitura" class="rounded-full mt-4" style="width: 80px; height: 80px; object-fit: cover;">
+            </div>
+            <div class="bg-custom-dark-brown rounded-lg p-4 shadow-lg cursor-pointer" style="width: 30%;">
+                <h2 class="font-bold text-3xl font-Montserrat">Misión y Objetivos</h2>
+                <p class="font-Montserrat">Nuestra misión es inspirar y equipar a músicos de todas las edades con instrumentos de alta calidad. Nos esforzamos por crear una comunidad que valore la música y que impulse el desarrollo artístico y personal de cada cliente.</p>
+                <img src="piano-vintage.jpeg" alt="Piano Vintage" class="rounded-full mt-4" style="width: 80px; height: 80px; object-fit: cover;">
+            </div>
+            <div class="bg-custom-dark-brown rounded-lg p-4 shadow-lg cursor-pointer" style="width: 30%;">
+                <h2 class="font-bold text-3xl font-Montserrat">Marcas</h2>
+                <p class="font-Montserrat">Trabajamos con marcas reconocidas mundialmente como Yamaha, Gibson, Fender, Roland y Casio, garantizando la mejor calidad y sonido en cada instrumento.</p>
+                <img src="micro.jpeg" alt="Micrófono" class="rounded-full mt-4" style="width: 80px; height: 80px; object-fit: cover;">
+            </div>
+        </section>
+    </section>
+
+    <!-- Sección Final -->
+    <footer class="bg-custom-light-brown py-4 text-center">
+        <p class="text-custom-text-light">© 2024 Clave de Sol. Todos los derechos reservados.</p>
+        <p><a style="color: #F2A007;" href="./sobreNosotros/aboutUs.html">Desarrolladores</a></p>
+    </footer>
 </body>
+
 </html>
-
-

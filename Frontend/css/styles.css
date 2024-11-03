@@ -209,9 +209,11 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   font-size: inherit;
   font-weight: inherit;
+  color: white;
 }
 
 /*
@@ -219,7 +221,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 */
 
 a {
-  color: inherit;
+  color: white;
   text-decoration: inherit;
 }
 
@@ -321,7 +323,7 @@ textarea {
   /* 1 */
   letter-spacing: inherit;
   /* 1 */
-  color: inherit;
+  color: black;
   /* 1 */
   margin: 0;
   /* 2 */
@@ -780,8 +782,8 @@ video {
 }
 
 .my-custom-button {
-  background-color: #FFD700;
-  color: #333;
+  /* background-color: #FFD700; */
+  /* color: #333; */
   padding: 10px 20px;
   flex: 0 0 auto; 
   margin-bottom: 40px; 
