@@ -26,3 +26,27 @@ li a:hover{
 }
 
 
+.my-form .grid {
+    display: flex;
+    justify-content: center;
+}
+
+.map-section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.map-section iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+}
+.my-custom-button {
+    padding: 2.5rem 2.5rem; /
+    display: inline-block;
+    text-align: center;
+}
+
+
+

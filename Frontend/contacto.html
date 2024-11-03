@@ -25,7 +25,6 @@
                 <li><a href="index.html" class="hover:text-custom-orange">Inicio</a></li>
                 <li><a href="sobre-nosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a></li>
                 <li><a href="productos.html" class="hover:text-custom-orange">Productos</a></li>
-                <!-- <li><a href="carrito.html" class="hover:text-custom-orange">Carrito de Compras</a></li> -->
                 <li><a href="contacto.html" class="hover:text-custom-orange">Contacto</a></li>
             </ul>
             <ul class="flex space-x-4">
@@ -36,7 +35,7 @@
     </header>
 
     <!-- Sección Contacto -->
-    <section id="contacto" class="bg-custom-very-light-brown">
+    <section id="contacto" class="bg-custom-very-light-brown py-8">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4 font-Montserrat text-custom-orange">Contacto</h2>
             <p class="text-lg mb-8 font-Montserrat text-custom-text-dark">Si tienes preguntas, ¡no dudes en
@@ -48,7 +47,7 @@
                     <img src="assets/correo logo.png" alt="Email" style="height: 1.5rem; width: 1.5rem;"
                         class="inline-block">
                 </span>
-                <p class="text-lg font-Montserrat text-custom-text-dark">Email: contacto@clavedesol.com</p>
+                <p class="text-lg font-Montserrat text-white">Email: contacto@clavedesol.com</p>
             </div>
 
             <!-- Ubicación -->
@@ -57,7 +56,7 @@
                     <img src="assets/ubicacion.png" alt="Ubicación" style="height: 1.5rem; width: 1.5rem;"
                         class="inline-block">
                 </span>
-                <p class="text-lg font-Montserrat text-custom-text-dark">Ubicación: San Rafael, Mendoza</p>
+                <p class="text-lg font-Montserrat text-white">Ubicación: San Rafael, Mendoza</p>
             </div>
 
             <!-- Teléfono -->
@@ -66,11 +65,11 @@
                     <img src="assets/telefono-logo.png" alt="Teléfono" style="height: 1.5rem; width: 1.5rem;"
                         class="inline-block">
                 </span>
-                <p class="text-lg font-Montserrat text-custom-text-dark">Teléfono: +54 9 1234 5678</p>
+                <p class="text-lg font-Montserrat text-white">Teléfono: +54 9 1234 5678</p>
             </div>
 
             <!-- Formulario de Contacto -->
-            <div class="my-form">
+            <div class="my-form mb-8">
                 <div class="form-group">
                     <input type="text" class="form-control rounded" placeholder="Nombre">
                 </div>
@@ -80,26 +79,26 @@
                 <div class="form-group">
                     <textarea class="form-control rounded" placeholder="Consulta"></textarea>
                 </div>
-                <div class="grid grid-cols-1 gap-4">
-                    <div class="flex items-center justify-center ">
-                        <button
-                            class="bg-custom-orange font-bold py-2 px-4 rounded-lg hover:bg-opacity-80 w-full md:w-1/2 my-custom-button" style="color: white;">
-                            Enviar
-                        </button>
-                    </div>
+                <!-- Botón Enviar -->
+                <div class="flex justify-center">
+                    <button
+                        class="bg-custom-orange text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-80 mx-auto">
+                        Enviar
+                    </button>
                 </div>
+            </div>
 
-
-                <div class="flex items-center justify-center mb-4">
-                    <section class="map-section bg-gray-200 p-4">
-                        <iframe src="https://www.google.com/maps/embed?..." width="80%" height="150" frameborder="0"
-                            style="border:0;" allowfullscreen></iframe>
-                </div>
-            </div>  
-        </div>    
+            <!-- Mapa -->
+            <div class="flex justify-center mb-4">
+                <section class="map-section bg-gray-200 p-4 rounded-lg" style="width: 80%;">
+                    <iframe src="https://www.google.com/maps/embed?..." width="100%" height="150" frameborder="0"
+                        style="border:0;" allowfullscreen></iframe>
+                </section>
+            </div>
+        </div>
     </section>
     
-     <!-- Sección Final -->
+    <!-- Sección Final -->
     <footer class="bg-custom-light-brown py-4 text-center">
         <p class="text-custom-text-light">
             © 2024 Clave de Sol. Todos los derechos reservados.
