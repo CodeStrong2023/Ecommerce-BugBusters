@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const token = sessionStorage.getItem('token');
 
     const header = document.querySelector('header');
-    const nav = header.querySelector('nav'); // Selecciona el elemento nav
-    const loginLinks = header.querySelectorAll('ul:nth-child(2) li'); // Selecciona los enlaces de login/registro
+    const nav = header.querySelector('nav'); 
+    const loginLinks = header.querySelectorAll('ul:nth-child(2) li'); 
 
     if (token) {
         nav.innerHTML = ''; //limpia todo el nav para poder crearlo devuelta
@@ -65,11 +65,30 @@ document.addEventListener("DOMContentLoaded", () => {
         nav.appendChild(navLinks);
         nav.appendChild(seccionUsuario);
 
+        updateCartCounter();
+
     }
 });
 
+//Función para actualizar el contador de productos
+export function updateCartCounter() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let totalItems = 0;
+
+    carrito.forEach(producto => {
+        totalItems += producto.cantidad; 
+    });
+
+    const cartCounter = document.getElementById('cart-counter');
+    cartCounter.textContent = totalItems;
+    cartCounter.style.display = totalItems > 0 ? 'block' : 'none';
+
+    const totalCard = document.getElementById('total-card');
+    totalCard.style.display = totalItems > 0 ? "block" : "none";
+}
+
 // Función para cerrar sesión
-function logout() {
+window.logout = function() {
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('usuario');
     localStorage.removeItem("token");

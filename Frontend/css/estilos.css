@@ -235,6 +235,10 @@ li > a:hover{
     font-weight: bold;
 }
 
+#total-card{
+    margin: 0 auto;
+}
+
 .cart-counter{
     display: none;
     position: fixed;

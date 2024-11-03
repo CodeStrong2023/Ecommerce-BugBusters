@@ -1,3 +1,4 @@
+import { updateCartCounter } from "./header-update.js";
 
 const apiURL = 'http://localhost:8080/productos'; 
 
@@ -117,6 +118,15 @@ const agregarAlCarrito = (producto) => {
     // Guarda el carrito actualizado en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
     // alert(`${producto.nombre} ha sido agregado al carrito!`);
+
+    updateCartCounter();
+
+    const totalCard = document.getElementById("total-card");
+    if (totalCard) {
+        totalCard.classList.remove("total-card");
+    }
+
+    
 }
 
 //limpia el carrito luego de la compra

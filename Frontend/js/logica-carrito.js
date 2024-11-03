@@ -1,3 +1,5 @@
+import { updateCartCounter } from "./header-update.js";
+
 document.addEventListener('DOMContentLoaded', () => {
     const carritoJSON = localStorage.getItem('carrito');
 
@@ -55,21 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.getElementById("btn-mp").addEventListener("click", iniciarPago);
-});
 
-//Función para actualizar el contador de productos del carrito
-function updateCartCounter() {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    let totalItems = 0;
-
-    carrito.forEach(producto => {
-        totalItems += producto.cantidad; 
-    });
-
-    const cartCounter = document.getElementById('cart-counter');
-    cartCounter.textContent = totalItems;
-    cartCounter.style.display = totalItems > 0 ? 'block' : 'none';
-}
 
 // Función para actualizar el precio total al incrementar o decrementar
 function updateTotal() {
@@ -172,8 +160,10 @@ function setupEventListeners() {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 }
+});
 
 
+//Permite el pago con Mercado Pago
 async function iniciarPago() {
     const carritoJSON = localStorage.getItem('carrito');
     const carrito = JSON.parse(carritoJSON);
@@ -195,9 +185,19 @@ async function iniciarPago() {
         });
 
         const urlDePago = await response.text();
-        console.log(urlDePago);
         window.location.href = urlDePago;
     } catch (error) {
         console.error('Error al iniciar el pago:', error);
     }
 }
+
+//limpia el carrito luego de la compra
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const pagoExitoso = urlParams.get('pagoExitoso'); 
+    if (pagoExitoso === 'true') {
+        // Borrar el carrito del localStorage
+        localStorage.removeItem('carrito');
+        updateCartCounter();
+    }
+});
