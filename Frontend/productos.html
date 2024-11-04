@@ -10,15 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap"
         rel="stylesheet"> <!-- Fuentes llamativas -->
     <link rel="stylesheet" href="css/estilos.css"> <!-- Estilos css personalizados -->
-    <style>
-        .product-card {
-            transition: transform 0.2s;
-        }
-
-        .product-card:hover {
-            transform: scale(1.05);
-        }
-    </style>
 </head>
 
 <body class="bg-custom-dark-brown text-custom-text-light" style="height: 100vh; display: flex; flex-direction: column;">
@@ -34,7 +25,6 @@
                 <li><a href="index.html" class="hover:text-custom-orange">Inicio</a></li>
                 <li><a href="sobre-nosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a></li>
                 <li><a href="productos.html" class="hover:text-custom-orange">Productos</a></li>
-                <!-- <li><a href="carrito.html" class="hover:text-custom-orange">Carrito de Compras</a></li> -->
                 <li><a href="contacto.html" class="hover:text-custom-orange">Contacto</a></li>
             </ul>
             <ul class="flex space-x-4">
@@ -44,50 +34,47 @@
         </nav>
     </header>
 
+
     <!-- Sección Productos -->
-    <section id="productos" class="bg-custom-very-light-brown py-10" style="flex-grow: 1;">
-        <div class="container mx-auto flex">
+    <section id="productos" class="bg-custom-very-light-brown productos-section">
+        <div class="container mx-auto flex gap-10">
             <!-- Sidebar de Filtros -->
-            <aside class="w-1/4 bg-white rounded-lg p-4 mr-4 shadow-lg">
-                <h2 class="text-lg font-bold mb-4">Filtros</h2>
+            <aside class="w-1/4 bg-custom-light-brown rounded-lg p-4 filtros">
+                <h2 class="text-lg font-bold mb-4" style="color: white;">Productos</h2>
                 <ul class="space-y-2">
-                    <li><a href="#" class="block text-custom-text-dark hover:text-custom-orange">Guitarras</a></li>
-                    <li><a href="#" class="block text-custom-text-dark hover:text-custom-orange">Bajos</a></li>
-                    <li><a href="#" class="block text-custom-text-dark hover:text-custom-orange">Baterías</a></li>
-                    <li><a href="#" class="block text-custom-text-dark hover:text-custom-orange">Teclados</a></li>
-                    <li><a href="#" class="block text-custom-text-dark hover:text-custom-orange">Accesorios</a></li>
+                    <li><a href="#" class="block text-custom-text-dark hover:text-custom-orange categoria" data-categoria="Guitarras">Guitarras</a></li>
+                    <li><a href="#" class="block text-custom-text-dark hover:text-custom-orange categoria" data-categoria="Bajos">Bajos</a></li>
+                    <li><a href="#" class="block text-custom-text-dark hover:text-custom-orange categoria" data-categoria="Baterias">Baterías</a></li>
+                    <li><a href="#" class="block text-custom-text-dark hover:text-custom-orange categoria" data-categoria="Teclados">Teclados</a></li>
+                    <li><a href="#" class="block text-custom-text-dark hover:text-custom-orange categoria" data-categoria="Accesorios">Accesorios</a></li>
                 </ul>
             </aside>
 
+            
+
             <!-- Productos -->
-            <div class="flex-1">
-                <h2 class="text-3xl font-bold mb-4 font-Montserrat text-custom-orange">Nuestros Productos</h2>
-                <p class="text-lg mb-4 font-Montserrat">Aquí puedes encontrar una amplia gama de instrumentos musicales.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="product-card bg-white rounded-lg p-4 shadow-lg cursor-pointer"
-                        onclick="window.location='producto1.html'">
-                        <img src="img/guitarra.jpg" alt="Guitarra Acústica" class="mb-2 rounded">
-                        <h3 class="font-bold text-lg font-Montserrat">Guitarra Acústica</h3>
-                        <p class="font-Montserrat">Perfecta para cualquier estilo musical.</p>
-                        <p class="font-bold text-xl mt-2">$300</p>
+            <section class="text-gray-600 body-font w-3/4 px-10" id="productos-container">
+
+            
+            
+            </section>
+
+            <!-- Modal producto individual -->
+            <div id="modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-img">
+                        <img id="imagen" />
                     </div>
-                    <div class="product-card bg-white rounded-lg p-4 shadow-lg cursor-pointer"
-                        onclick="window.location='producto2.html'">
-                        <img src="img/piano.jpg" alt="Piano Digital" class="mb-2 rounded">
-                        <h3 class="font-bold text-lg font-Montserrat">Piano Digital</h3>
-                        <p class="font-Montserrat">Calidad de sonido excepcional.</p>
-                        <p class="font-bold text-xl mt-2">$500</p>
+                    <div class="modal-info">
+                        <h2 id="nombre"></h2>
+                        <p id="descripcion"></p>
+                        <p id="precio"></p>
+                        <button id="agregarCarrito">Agregar al Carrito</button>
                     </div>
-                    <div class="product-card bg-white rounded-lg p-4 shadow-lg cursor-pointer"
-                        onclick="window.location='producto3.html'">
-                        <img src="img/bateria.jpg" alt="Batería Eléctrica" class="mb-2 rounded">
-                        <h3 class="font-bold text-lg font-Montserrat">Batería Eléctrica</h3>
-                        <p class="font-Montserrat">Para los amantes del ritmo.</p>
-                        <p class="font-bold text-xl mt-2">$700</p>
-                    </div>
+                    <p id="cerrar-modal" class="close">X</p>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -96,9 +83,12 @@
         <p class="text-custom-text-light">
             © 2024 Clave de Sol. Todos los derechos reservados.
         </p>
-        <p><a style="color: #F2A007;" href="./sobreNosotros/aboutUs.html">Desarrolladores</a></p>
+        <p><a style="color: #F2A007;" href="aboutUs.html">Desarrolladores</a></p>
     </footer>
-
+    
+    <script type="module" src="js/productos.js"></script>
+    <script type="module" src="js/logica-carrito.js"></script>
+    <script type="module" src="js/header-update.js"></script>
 </body>
 
 </html>

@@ -778,7 +778,7 @@ video {
   /* Contenedor para el botón */
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 1200px;
 }
 
 .my-custom-button {
@@ -788,6 +788,26 @@ video {
   flex: 0 0 auto; 
   margin-bottom: 40px; 
 }
+button {
+  background-color: #F2A007; /* Color de fondo amarillo */
+  color: white; /* Color del texto */
+  padding: 12px 24px; /* Ajuste del padding para aumentar el espacio */
+  border: none;
+  border-radius: 8px; /* Ajuste opcional del borde redondeado */
+  font-size: 1rem; /* Ajuste del tamaño del texto */
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d18905; /* Cambia el color al pasar el mouse */
+}
+
+
+button:hover {
+  background-color: #d18905; 
+}
+
+
 .map-section {
   @apply bg-gray-200 p-4;
 }

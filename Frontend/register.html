@@ -26,7 +26,6 @@
                 <li><a href="index.html" class="hover:text-custom-orange">Inicio</a></li>
                 <li><a href="sobre-nosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a></li>
                 <li><a href="productos.html" class="hover:text-custom-orange">Productos</a></li>
-                <!-- <li><a href="carrito.html" class="hover:text-custom-orange">Carrito de Compras</a></li> -->
                 <li><a href="contacto.html" class="hover:text-custom-orange">Contacto</a></li>
             </ul>   
             <ul class="flex space-x-4">
@@ -39,9 +38,9 @@
     <section style="flex-grow: 1; margin-top: 100px;">
         <div class="container mx-auto text-center" style="width: 40%;">
             <h2 class="text-3xl font-bold mb-4">Registrarse</h2>
-            <form action="register.php" method="POST" class="bg-custom-light-brown p-6 rounded-lg">
+            <form method="POST" class="bg-custom-light-brown p-6 rounded-lg">
                 <div class="mb-4">
-                    <label for="name" class="block text-lg mb-2">Nombre:</label>
+                    <label for="name" class="block text-lg mb-2">Usuario:</label>
                     <br>
                     <input type="text" id="name" name="name" class="w-full p-2 rounded" required style="width: 70%; padding: 5px;">
                 </div>
@@ -55,7 +54,7 @@
                     <br>
                     <input type="password" id="password" name="password" class="w-full p-2 rounded" required style="width: 70%; padding: 5px;">
                 </div>
-                <button type="submit" class="bg-custom-orange text-white px-4 py-2 rounded hover:bg-opacity-80" style="padding: 5px 24px; border-radius: 5px;">
+                <button id="btn-registro" class="bg-custom-orange text-white px-4 py-2 rounded hover:bg-opacity-80" style="padding: 5px 24px; border-radius: 5px;">
                     Registrarse
                 </button>
             </form>
@@ -67,8 +66,11 @@
     <!-- Sección Final -->
     <footer class="bg-custom-light-brown py-4 text-center mt-auto w-full">
         <p class="text-custom-light">© 2024 Clave de Sol. Todos los derechos reservados.</p>
-        <p><a style="color: #F2A007;" href="./sobreNosotros/aboutUs.html">Desarrolladores</a></p>
+        <p><a style="color: #F2A007;" href="aboutUs.html">Desarrolladores</a></p>
     </footer>
+
+    <script src="js/registro.js"></script>
+   
 
 </body>
 
