@@ -118,6 +118,7 @@ li > a:hover {
 #productos-container {
     min-height: 50vh;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .filtros {
