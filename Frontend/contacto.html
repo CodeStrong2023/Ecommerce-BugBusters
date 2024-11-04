@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/estilos.css"> <!-- Estilos css personalizados -->
 </head>
 
-<body class="bg-custom-dark-brown text-custom-text-light">
+<body class="bg-custom-very-light-brown text-custom-text-light">
     <!-- Barra de Tareas -->
     <header class="bg-custom-light-brown">
         <nav class="flex justify-between items-center">
@@ -35,7 +35,7 @@
     </header>
 
     <!-- Sección Contacto -->
-    <section id="contacto" class="bg-custom-very-light-brown py-8">
+    <section id="contacto" class="bg-custom-very-light-brown py-8 flex-grow w-full">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4 font-Montserrat text-custom-orange">Contacto</h2>
             <p class="text-lg mb-8 font-Montserrat text-custom-text-dark">Si tienes preguntas, ¡no dudes en
@@ -71,14 +71,16 @@
             </div>
 
             <!-- Formulario de Contacto -->
-            <div class="my-form mb-8">
+            <div class="my-form mb-8 rounded-lg">
                 <div class="form-group mb-4">
-                    <input type="text" class="form-control rounded w-3/4 md:w-1/2 mx-auto" placeholder="Nombre" style="padding: 8px; font-size: 0.9rem;">
+                    <input type="text" class="form-control rounded w-3/4 md:w-1/2 mx-auto mb-4" placeholder="Nombre" style="padding: 8px; font-size: 0.9rem;">
                 <div class="form-group">
-                    <input type="text" class="form-control rounded" placeholder="Nombre">                </div>
+                    <input type="text" class="form-control rounded" placeholder="Apellido" ></div>
                 <div class="form-group mb-4">
                     <input type="email" class="form-control rounded w-3/4 md:w-1/2 mx-auto" placeholder="Email" style="padding: 8px; font-size: 0.9rem;">
                 </div>
+
+
                 <div class="form-group mb-4">
                     <textarea class="form-control rounded w-3/4 md:w-1/2 mx-auto" placeholder="Consulta" style="padding: 8px; font-size: 0.9rem;"></textarea>
                 </div>
@@ -89,14 +91,6 @@
                         Enviar
                     </button>
                 </div>
-            </div>
-
-            <!-- Mapa -->
-            <div class="flex justify-center mb-4">
-                <section class="map-section bg-gray-200 p-4 rounded-lg" style="width: 80%;">
-                    <iframe src="https://www.google.com/maps/embed?..." width="100%" height="150" frameborder="0"
-                        style="border:0;" allowfullscreen></iframe>
-                </section>
             </div>
         </div>
     </section>

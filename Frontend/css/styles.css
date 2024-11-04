@@ -169,12 +169,7 @@ html,
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
 
-body {
-  margin: 0;
-  /* 1 */
-  line-height: inherit;
-  /* 2 */
-}
+
 
 /*
 1. Add the correct height in Firefox.
@@ -807,19 +802,6 @@ button:hover {
   background-color: #d18905; 
 }
 
-
-.map-section {
-  @apply bg-gray-200 p-4;
-}
-header {
-  @apply bg-gray-800 text-white py-4;
-}
-footer {
-  @apply bg-custom-light-brown w-full py-8;
-}
-
-
-  
 
 .bg-custom-light-brown {
   padding: 20px; 
