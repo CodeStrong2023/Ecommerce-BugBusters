@@ -1,0 +1,93 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    text-align: center;
+    color: black;
+}
+
+body {
+    background:#8C5437;
+    background-size: 400% 400%;
+}
+
+.titulo{
+    background-color: #d5bdaec7;
+    height: 80px;
+    width: 350px;
+    margin: 50px auto 0px auto ;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 7px #594636;
+    cursor:default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fondo{
+    background-color: #594636;
+    box-sizing: border-box;
+    width: 800px ;
+    height: 500px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 7px #594636;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+}
+
+.solapas{
+    background-color: #d5bdaec7;
+    box-sizing: border-box;
+    width: 280px;
+    height: 400px;
+    padding: 0;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 2px #D5BDAE;
+    text-align: center;
+    position: relative;/*Remplazar propiedad position, está obsoleta*/
+    /*Agregar align-items:baseline*/
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+}
+
+.subtitulo{
+    font-size: 26px;
+    position: relative;
+    top: -110px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.subtitulo1{
+    margin-top: 165px;
+}
+
+.subtitulo2{
+    margin-top: 165px;
+}
+
+.solapas:hover{
+    transform: scale(1.05);
+}
+
+.foto{
+    height: 200px;
+    margin-top: -75px;
+    filter: drop-shadow(0 0 10px #000000cc);
+}
+
+.fclavedesol{
+    height: 220px;
+    margin-top: -85px;
+    margin-left: -10px;
+    filter: drop-shadow(0 0 10px #ffffff);
+}
