@@ -50,7 +50,7 @@ function loadDashboard() {
     dashboardContainer.style.display = 'block'; // Mostrar el contenedor del dashboard
 }
 
-const apiURL = 'http://localhost:8080/admin';
+const apiURL = 'https://ecommerce-bugbusters-production.up.railway.app/admin';
 
 const token = sessionStorage.getItem('token'); 
 
@@ -226,7 +226,7 @@ function editProduct(id) {
             const row = document.createElement('tr');
             row.innerHTML = `
             <td>${product.id}</td>
-            <td><img src=http://localhost:8080${product.imagenUrl} width="50"></td>
+            <td><img src=https://ecommerce-bugbusters-production.up.railway.app/${product.imagenUrl} width="50"></td>
             <td>${product.nombre}</td>
             <td>${product.descripcion}</td>
             <td>${product.precio.toFixed(2)}</td>

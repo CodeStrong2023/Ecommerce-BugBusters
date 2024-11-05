@@ -73,7 +73,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://127.0.0.1:5500", "http://localhost:5500")); // Permitir orígenes
+        configuration.setAllowedOrigins(Arrays.asList("https://ecommerce-bug-busters.vercel.app/")); // Permitir orígenes
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Métodos permitidos
         configuration.setAllowedHeaders(Arrays.asList("*")); // Permitir todos los headers
         configuration.setAllowCredentials(true); // Permitir credenciales
