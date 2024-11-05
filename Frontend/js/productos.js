@@ -1,6 +1,6 @@
 import { updateCartCounter } from "./header-update.js";
 
-const apiURL = "https://ecommerce-bugbusters-production.up.railway.app//productos";
+const apiURL = "https://ecommerce-bugbusters-production.up.railway.app/productos";
 
 const productosContainer = document.getElementById("productos-container");
 
