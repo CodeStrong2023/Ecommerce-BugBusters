@@ -24,7 +24,7 @@ btnLogin.addEventListener('click', async (event) => {
     }
 
     try{
-        const response = await fetch("http://localhost:8080/iniciar-sesion",{
+        const response = await fetch("https://ecommerce-bugbusters-production.up.railway.app//iniciar-sesion",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
