@@ -226,7 +226,7 @@ function editProduct(id) {
             const row = document.createElement('tr');
             row.innerHTML = `
             <td>${product.id}</td>
-            <td><img src=https://ecommerce-bugbusters-production.up.railway.app/${product.imagenUrl} width="50"></td>
+            <td><img src=https://ecommerce-bugbusters-production.up.railway.app${product.imagenUrl} width="50"></td>
             <td>${product.nombre}</td>
             <td>${product.descripcion}</td>
             <td>${product.precio.toFixed(2)}</td>

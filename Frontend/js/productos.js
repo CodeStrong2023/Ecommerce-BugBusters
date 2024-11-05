@@ -79,7 +79,7 @@ const abrirModal = (producto) => {
     const agregarCarritoBtn = document.getElementById("agregarCarrito");
 
     
-    modalImagen.src = `https://ecommerce-bugbusters-production.up.railway.app/${producto.imagenUrl}`;
+    modalImagen.src = `https://ecommerce-bugbusters-production.up.railway.app${producto.imagenUrl}`;
     modalImagen.alt = producto.nombre;
     modalNombre.textContent = producto.nombre;
     modalDescripcion.textContent = producto.descripcion;
