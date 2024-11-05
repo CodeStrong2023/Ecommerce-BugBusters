@@ -21,7 +21,7 @@ h2{
     width: 20%;
     text-align: center;
     margin: auto;
-    margin-top: 6%;
+    margin-top: 2%;
     font-size: 40px;
     background-color: #594636;
     box-shadow: 0px 0px 10px 3px #594636;
@@ -39,6 +39,7 @@ h2{
     padding: 20px;
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 150px;
     border-radius: 20px;
     box-shadow: 0px 0px 15px 7px #594636;
     display: flex;

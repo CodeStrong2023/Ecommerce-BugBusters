@@ -351,7 +351,8 @@ li > a:hover {
     }
 
     .titulo{
-        margin: 0px;
+        margin: 20px auto;
+        width: 400px;
     }
 
     .nosotros{
