@@ -10,7 +10,7 @@ body {
     background-size: 100%;
 }
 
-.titulo{
+.contenedor-titulo{
     background-color: #d5bdaec7;
     height: 80px;
     width: 350px;
@@ -21,6 +21,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.titulo{
+    font-size: 28px;
 }
 
 .fondo{
@@ -47,45 +51,38 @@ body {
     margin: auto;
     border-radius: 20px;
     box-shadow: 0px 0px 10px 2px #D5BDAE;
-    text-align: center;
-    position: relative;/*Remplazar propiedad position, está obsoleta*/
-    /*Agregar align-items:baseline*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
     cursor: pointer;
     overflow: hidden;
     transition: transform 0.5s ease-in-out;
+    align-items: baseline;
 }
 
 .subtitulo{
     font-size: 26px;
-    position: relative;
-    top: -110px;
+    margin-top: 40px;
 }
 
 a{
     text-decoration: none;
 }
 
-.subtitulo1{
-    margin-top: 165px;
-}
-
-.subtitulo2{
-    margin-top: 165px;
-}
-
 .solapas:hover{
     transform: scale(1.05);
 }
 
-.foto{
-    height: 200px;
-    margin-top: -75px;
-    filter: drop-shadow(0 0 10px #000000cc);
+.fclavedesol{
+    height: 80%;
+    filter: drop-shadow(0 0 10px #ffffff);
+    margin-top: -30px; 
 }
 
-.fclavedesol{
-    height: 220px;
-    margin-top: -85px;
-    margin-left: -10px;
-    filter: drop-shadow(0 0 10px #ffffff);
+.fbugbusters{
+    height: 50%;
+    margin-top: 30px;    
+    filter: drop-shadow(0 0 10px #000000cc);
 }
