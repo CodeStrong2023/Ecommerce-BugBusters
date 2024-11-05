@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.className = 'flex space-x-4';
         navLinks.innerHTML = `
             <li style="color: white;"><a href="index.html" class="hover:text-custom-orange">Inicio</a></li>
-            <li style="color: white;"><a href="sobre-nosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a></li>
+            <li style="color: white;"><a href="SobreNosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a></li>
             <li style="color: white;"><a href="productos.html" class="hover:text-custom-orange">Productos</a></li>
             <li style="color: white;"><a href="contacto.html" class="hover:text-custom-orange">Contacto</a></li>`;
 

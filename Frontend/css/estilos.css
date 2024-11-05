@@ -35,6 +35,10 @@ li a {
     margin: 0px 15px;
 }
 
+nav li{
+    color: white;
+}
+
 li > a:hover {
     border-bottom: 2px solid;
     padding-bottom: 2px;
@@ -319,7 +323,12 @@ li > a:hover {
         margin-top: 15px;
     }
 
-    /* SOBRE NOSOTROS */
+    /* SOBRE NOSOTROS y DESAROLLADORES*/
+
+    .fondo{
+        width: 80%;
+        margin: 15px auto 100px;
+    }
 
     .seccion-nosotros{
         margin-top: -70px;
@@ -340,6 +349,21 @@ li > a:hover {
     .imagen{
         width: 60%;
     }
+
+    .titulo{
+        margin: 0px;
+    }
+
+    .nosotros{
+        margin: 20px auto;
+        margin-bottom: 120px;
+        width: 95%;
+    }
+
+    .integrantes{
+        width: 400px;
+    }
+
 
     /* PRODUCTOS */
 
@@ -370,22 +394,6 @@ li > a:hover {
 
     #contacto{
         margin-bottom: 40px;
-    }
-
-    /* DESAROLLADORES */
-
-    .titulo{
-        margin: 0px;
-    }
-
-    .nosotros{
-        margin: 20px auto;
-        margin-bottom: 120px;
-        width: 95%;
-    }
-
-    .integrantes{
-        width: 400px;
     }
 
     
