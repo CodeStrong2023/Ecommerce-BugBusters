@@ -1,12 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/SobreNosotros.css">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nosotros - Clave de Sol</title>
+    <link rel="icon" href="assets/logo solo.png" type="image/png" />
+    <link rel="stylesheet" href="css/SobreNosotros.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet"/>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+
+<!-- Barra de Tareas -->
+<header class="bg-custom-light-brown text-white">
+    <nav class="flex justify-between items-center">
+        <div class="text-3xl font-bold flex items-center">
+            <img
+                src="assets/logo solo.png"
+                alt="Logo Clave de Sol"
+                class="mr-2 object-contain"
+                style="width: 90px; height: 90px"
+            />
+            <h3><a href="index.html">Clave de Sol</a></h3>
+        </div>
+        <ul class="flex space-x-4">
+            <li>
+                <a href="index.html" class="hover:text-custom-orange"
+                    >Inicio</a
+                >
+            </li>
+            <li>
+                <a
+                    href="sobre-nosotros.html"
+                    class="hover:text-custom-orange"
+                    >Sobre Nosotros</a
+                >
+            </li>
+            <li>
+                <a
+                    href="productos.html"
+                    class="hover:text-custom-orange"
+                    >Productos</a
+                >
+            </li>
+            <li>
+                <a href="contacto.html" class="hover:text-custom-orange"
+                    >Contacto</a
+                >
+            </li>
+        </ul>
+        <ul class="flex space-x-4">
+            <li>
+                <a href="login.html" class="hover:text-custom-orange"
+                    >Iniciar Sesión</a
+                >
+            </li>
+            <li>
+                <a href="register.html" class="hover:text-custom-orange"
+                    >Registrarse</a
+                >
+            </li>
+        </ul>
+    </nav>
+</header>
+
     <div class="titulo">
         <h1>SOBRE NOSOTROS</h1>
     </div>
@@ -24,5 +84,17 @@
             </article>
         </a>
     </section>
+
+<!-- Sección Final -->
+    <footer class="bg-custom-light-brown py-4 text-center">
+        <p class="text-custom-text-light">
+            © 2024 Clave de Sol. Todos los derechos reservados.
+        </p>
+        <p>
+            <a style="color: #f2a007" href="aboutUs.html">Desarrolladores</a>
+        </p>
+    </footer>
+
+    <script type="module" src="js/header-update.js"></script>
 </body>
 </html>
