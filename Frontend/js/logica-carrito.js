@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <img src="http://localhost:8080${producto.imagenUrl}" alt="product-image" class="w-full rounded-lg sm:w-40" />
                             <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                                 <div class="mt-5 sm:mt-0">
-                                    <h2 class="text-lg font-bold text-gray-900">${producto.nombre}</h2>
+                                    <h2 class="text-lg font-bold text-gray-900" style="padding: 0px 15px">${producto.nombre}</h2>
                                     <p class="mt-1 text-xs text-gray-700">$${producto.precio}</p>
                                 </div>
                                 <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">

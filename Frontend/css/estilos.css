@@ -46,6 +46,7 @@ li > a:hover {
     color: white;
 }
 
+
 .usuario-container {
     border: 1px solid #1a0200ee;
     width: auto;
@@ -245,6 +246,7 @@ li > a:hover {
 
 #total-card {
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .cart-counter {
@@ -272,13 +274,20 @@ li > a:hover {
     justify-content: center;
 }
 
-/* .map-section iframe {
-    width: 100%;
-    max-width: 600px;
-    height: 150px;
+.inicio-text{
+    margin-bottom: 100px;
 }
-.my-custom-button {
-    padding: 2.5rem 2.5rem;
-    display: inline-block;
-    text-align: center;
-} */
+
+.imagen-contenedor{
+    height: 85vh;
+}
+
+.imagen-inicio{
+    height: 90vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.fotos{
+    object-fit: cover;
+}
