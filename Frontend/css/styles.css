@@ -169,12 +169,7 @@ html,
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
 
-body {
-  margin: 0;
-  /* 1 */
-  line-height: inherit;
-  /* 2 */
-}
+
 
 /*
 1. Add the correct height in Firefox.
@@ -789,7 +784,7 @@ video {
   margin-bottom: 40px; 
 }
 button {
-  background-color: #F2A007; /* Color de fondo amarillo */
+  background-color: #f2a00700; /* Color de fondo amarillo */
   color: white; /* Color del texto */
   padding: 12px 24px; /* Ajuste del padding para aumentar el espacio */
   border: none;
@@ -798,28 +793,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #d18905; /* Cambia el color al pasar el mouse */
-}
 
-
-button:hover {
-  background-color: #d18905; 
-}
-
-
-.map-section {
-  @apply bg-gray-200 p-4;
-}
-header {
-  @apply bg-gray-800 text-white py-4;
-}
-footer {
-  @apply bg-custom-light-brown w-full py-8;
-}
-
-
-  
 
 .bg-custom-light-brown {
   padding: 20px; 

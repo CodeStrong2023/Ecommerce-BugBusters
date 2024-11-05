@@ -2,7 +2,23 @@
     display: none; /* Oculta la barra de desplazamiento */
 }
 
-header{
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 100px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+header {
     height: 80px;
     display: flex;
     position: sticky;
@@ -11,7 +27,7 @@ header{
     width: 100%;
 }
 
-nav{
+nav {
     width: 100%;
 }
 
@@ -19,18 +35,27 @@ li a {
     margin: 0px 15px;
 }
 
-li > a:hover{
+nav li{
+    color: white;
+}
+
+li > a:hover {
     border-bottom: 2px solid;
     padding-bottom: 2px;
     transition: 0.1s ease;
 }
 
-#carrito{
+.registro, .inicio-sesion{
+    margin-top: 100px;
+}
+
+#carrito {
     width: 30px;
     color: white;
 }
 
-.usuario-container{
+
+.usuario-container {
     border: 1px solid #1a0200ee;
     width: auto;
     display: flex;
@@ -40,18 +65,18 @@ li > a:hover{
     margin-right: 5px;
 }
 
-#flecha{
+#flecha {
     width: 20px;
     margin-left: 5px;
 }
 
-.usuario{
+.usuario {
     font-size: 18px;
     color: white;
     text-transform: capitalize;
 }
 
-.cerrar-sesion{
+.cerrar-sesion {
     width: 150px;
     height: 50px;
     background-color: #1a0200ee;
@@ -60,16 +85,16 @@ li > a:hover{
     top: 60px;
 }
 
-.logout{
+.logout {
     margin-top: 8px;
     color: white;
 }
 
-.logout a:hover{
-    color: #F2A007;
+.logout a:hover {
+    color: #f2a007;
 }
 
-.user-cart-container{
+.user-cart-container {
     width: 150px;
     display: flex;
     justify-content: space-between;
@@ -79,7 +104,7 @@ li > a:hover{
     display: none;
 }
 
-.mensaje-ok{
+.mensaje-ok {
     margin: 10px auto;
     color: white;
     font-size: 18px;
@@ -89,43 +114,38 @@ li > a:hover{
     border-radius: 15px;
 }
 
-.mensaje-error{
+.mensaje-error {
     margin-top: 10px;
     color: red;
     font-size: 18px;
 }
 
-.productos-section{
-    width: 100%;
+.productos-section {
     padding: 50px 0;
 }
 
-#productos-container{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+#productos-container {
+    min-height: 50vh;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
-.filtros{
+.filtros {
     position: fixed;
     top: 132px;
-    left: 100px;
+    left: 50px;
     height: 300px;
 }
 
-.filtros ul li{
+.filtros ul li {
     margin-bottom: 10px;
 }
 
-.filtros ul a{
+.filtros ul a {
     color: white;
 }
 
-
-.producto{
+.producto {
     border: 2px solid #1a0200ee;
     border-radius: 15px;
     width: 300px;
@@ -136,7 +156,7 @@ li > a:hover{
     flex-direction: column;
 }
 
-.producto-titulo{
+.producto-titulo {
     color: #1a0200ee;
     font-size: 22px;
     text-align: center;
@@ -144,20 +164,19 @@ li > a:hover{
     flex-grow: 1;
 }
 
-.producto-precio{
+.producto-precio {
     color: black;
     font-weight: bold;
     text-align: center;
 }
 
-.producto{
+.producto {
     transition: transform 0.2s;
 }
 
 .producto:hover {
     transform: scale(1.05);
 }
-
 
 .modal {
     position: fixed;
@@ -182,48 +201,46 @@ li > a:hover{
     flex-direction: row;
 }
 
-.modal-img{
+.modal-img {
     width: 60%;
     display: flex;
     align-items: center;
 }
 
-.modal-info{
+.modal-info {
     width: 40%;
     display: flex;
     flex-direction: column;
     padding: 10px;
 }
 
-.modal-info h2{
+.modal-info h2 {
     color: #1a0200ee;
     font-weight: bold;
     font-size: 30px;
     margin: 50px 0px 70px;
 }
 
-.modal-info p{
+.modal-info p {
     color: black;
     margin-bottom: 20px;
 }
 
-#precio{
+#precio {
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 30px;
 }
 
-#agregarCarrito{
+#agregarCarrito {
     background-color: #594636;
     color: white;
-    width: 70%;
     height: 30px;
     border-radius: 15px;
     margin: 0 auto;
-
 }
 
-#agregarCarrito:hover{
+#agregarCarrito:hover {
     background-color: hsl(27, 24%, 18%);
 }
 
@@ -235,11 +252,16 @@ li > a:hover{
     font-weight: bold;
 }
 
-#total-card{
+#total-card {
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
-.cart-counter{
+#btn-mp{
+    margin: 0px;
+}
+
+.cart-counter {
     display: none;
     position: fixed;
     top: 20px;
@@ -253,7 +275,7 @@ li > a:hover{
     font-size: 12px;
 }
 
-.info-nosotros{
+.info-nosotros {
     width: 80%;
     margin: 20px auto;
     font-size: 18px;
@@ -264,23 +286,116 @@ li > a:hover{
     justify-content: center;
 }
 
-.map-section {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+.inicio-text{
+    margin-bottom: 100px;
 }
 
-.map-section iframe {
+.imagen-contenedor{
+    height: 85vh;
+}
+
+.imagen-inicio{
+    height: 90vh;
     width: 100%;
-    max-width: 600px;
-    height: 150px;
+    object-fit: cover;
 }
-.my-custom-button {
-    padding: 2.5rem 2.5rem; /
-    display: inline-block;
-    text-align: center;
+
+.fotos{
+    object-fit: cover;
 }
 
 
+@media (min-width: 1024px) and (max-width: 1600px) {
+
+    /* INICIO */
+
+    .imagen-contenedor{
+        height: 87vh;
+    }
+
+    .imagen-inicio{
+        height: 95vh;
+    }
+
+    /* INICIAR SESION Y REGISTRO */
+
+    .registro, .inicio-sesion{
+        margin-top: 15px;
+    }
+
+    /* SOBRE NOSOTROS y DESAROLLADORES*/
+
+    .fondo{
+        width: 80%;
+        margin: 15px auto 100px;
+    }
+
+    .seccion-nosotros{
+        margin-top: -70px;
+        margin-bottom: 50px;
+    }
+
+    .contendor-nosotros{
+        display: flex;
+        height: 390px;
+    }
+
+    .info-nosotros{
+        width: 100%;
+        font-size: 16px;
+        margin-top: 0px;
+    }
+
+    .imagen{
+        width: 60%;
+    }
+
+    .titulo{
+        margin: 20px auto;
+        width: 400px;
+    }
+
+    .nosotros{
+        margin: 20px auto;
+        margin-bottom: 120px;
+        width: 95%;
+    }
+
+    .integrantes{
+        width: 400px;
+    }
 
 
+    /* PRODUCTOS */
+
+    #productos-container{
+        margin-left: 200px;
+    }
+
+    .modal{
+        top: 20px
+    }
+
+    .modal-content{
+        height: 450px;
+    }
+
+    .modal-info{
+        width: 65%;
+    }
+
+    .modal h2{
+        margin: 0px;
+        margin-bottom: 10px;
+        width: 100%;
+        font-size: 22px;
+    }
+
+    /* CONTACTO */
+
+    #contacto{
+        margin-bottom: 40px;
+    }
+
+    
+}

@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    text-align: center;
+    color: black;
+}
+
+body {
+    background:#d5bdaec7;
+    background-size: 100%;
+}
+
+.contenedor-titulo{
+    background-color: #d5bdaec7;
+    height: 80px;
+    width: 350px;
+    margin: 2% auto 2% auto ;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 7px #594636;
+    cursor:default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    font-size: 28px;
+}
+
+.fondo{
+    background-color: #594636;
+    box-sizing: border-box;
+    width: 50%;
+    height: 550px;
+    padding: 20px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 7px #594636;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+}
+
+.solapas{
+    background-color: #d5bdaec7;
+    box-sizing: border-box;
+    width: 350px;
+    height: 400px;
+    padding: 0;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 2px #D5BDAE;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    align-items: baseline;
+}
+
+.subtitulo{
+    font-size: 26px;
+    margin-top: 40px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.solapas:hover{
+    transform: scale(1.05);
+}
+
+.fclavedesol{
+    height: 80%;
+    filter: drop-shadow(0 0 10px #ffffff);
+    margin-top: -30px; 
+}
+
+.fbugbusters{
+    height: 50%;
+    margin-top: 30px;    
+    filter: drop-shadow(0 0 10px #000000cc);
+}

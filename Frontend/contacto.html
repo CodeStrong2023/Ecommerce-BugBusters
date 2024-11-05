@@ -10,9 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap"
         rel="stylesheet"> <!-- Fuentes llamativas -->
     <link rel="stylesheet" href="css/estilos.css"> <!-- Estilos css personalizados -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-custom-dark-brown text-custom-text-light">
+<body class="bg-custom-very-light-brown text-custom-text-light">
     <!-- Barra de Tareas -->
     <header class="bg-custom-light-brown">
         <nav class="flex justify-between items-center">
@@ -23,7 +24,7 @@
             </div>
             <ul class="flex space-x-4">
                 <li><a href="index.html" class="hover:text-custom-orange">Inicio</a></li>
-                <li><a href="sobre-nosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a></li>
+                <li><a href="SobreNosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a></li>
                 <li><a href="productos.html" class="hover:text-custom-orange">Productos</a></li>
                 <li><a href="contacto.html" class="hover:text-custom-orange">Contacto</a></li>
             </ul>
@@ -35,7 +36,7 @@
     </header>
 
     <!-- Sección Contacto -->
-    <section id="contacto" class="bg-custom-very-light-brown py-8">
+    <section id="contacto" class="bg-custom-very-light-brown py-8 flex-grow w-full">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-4 font-Montserrat text-custom-orange">Contacto</h2>
             <p class="text-lg mb-8 font-Montserrat text-custom-text-dark">Si tienes preguntas, ¡no dudes en
@@ -60,7 +61,7 @@
             </div>
 
             <!-- Teléfono -->
-            <div class="flex items-center justify-center mb-4">
+            <div class="flex items-center justify-center mb-4 mr-6">
                 <span class="mr-2">
                     <img src="assets/telefono-logo.png" alt="Teléfono" style="height: 1.5rem; width: 1.5rem;"
                         class="inline-block">
@@ -71,44 +72,43 @@
             </div>
 
             <!-- Formulario de Contacto -->
-            <div class="my-form mb-8">
+            <div class="my-form mb-8 rounded-lg">
                 <div class="form-group mb-4">
-                    <input type="text" class="form-control rounded w-3/4 md:w-1/2 mx-auto" placeholder="Nombre" style="padding: 8px; font-size: 0.9rem;">
-                <div class="form-group">
-                    <input type="text" class="form-control rounded" placeholder="Nombre">                </div>
-                <div class="form-group mb-4">
-                    <input type="email" class="form-control rounded w-3/4 md:w-1/2 mx-auto" placeholder="Email" style="padding: 8px; font-size: 0.9rem;">
-                </div>
-                <div class="form-group mb-4">
-                    <textarea class="form-control rounded w-3/4 md:w-1/2 mx-auto" placeholder="Consulta" style="padding: 8px; font-size: 0.9rem;"></textarea>
-                </div>
-                <!-- Botón Enviar -->
-                <div class="flex justify-center">
-                    <button
-                    class="bg-custom-orange text-white font-bold py-3 px-12 rounded-full hover:bg-opacity-80 mx-auto text-lg">
-                        Enviar
-                    </button>
-                </div>
-            </div>
+                    <input type="text" class="form-control rounded w-3/4 md:w-1/2 mx-auto mb-4" placeholder="Nombre"
+                        style="padding: 8px; font-size: 0.9rem;">
+                    <div class="form-group">
+                        <input type="text" class="form-control rounded w-3/4 md:w-1/2 mx-auto mb-4"
+                            placeholder="Apellido">
+                    </div>
+                    <div class="form-group mb-4">
+                        <input type="email" class="form-control rounded w-3/4 md:w-1/2 mx-auto" placeholder="Email"
+                            style="padding: 8px; font-size: 0.9rem;">
+                    </div>
 
-            <!-- Mapa -->
-            <div class="flex justify-center mb-4">
-                <section class="map-section bg-gray-200 p-4 rounded-lg" style="width: 80%;">
-                    <iframe src="https://www.google.com/maps/embed?..." width="100%" height="150" frameborder="0"
-                        style="border:0;" allowfullscreen></iframe>
-                </section>
+
+                    <div class="form-group mb-4">
+                        <textarea class="form-control rounded w-3/4 md:w-1/2 mx-auto" placeholder="Consulta"
+                            style="padding: 8px; font-size: 0.9rem;"></textarea>
+                    </div>
+                    <!-- Botón Enviar -->
+                    <div class="flex justify-center">
+                        <button
+                            class="bg-custom-orange text-white font-bold py- px-12 rounded-full hover:bg-opacity-80 mx-auto text-lg">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
     </section>
-    
+
     <!-- Sección Final -->
     <footer class="bg-custom-light-brown py-4 text-center">
         <p class="text-custom-text-light">
             © 2024 Clave de Sol. Todos los derechos reservados.
         </p>
-        <p><a style="color: #F2A007;" href="./sobreNosotros/aboutUs.html">Desarrolladores</a></p>
     </footer>
 
+    <script type="module" src="js/header-update.js"></script>
 </body>
 
 </html>
