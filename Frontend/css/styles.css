@@ -784,7 +784,7 @@ video {
   margin-bottom: 40px; 
 }
 button {
-  background-color: #F2A007; /* Color de fondo amarillo */
+  background-color: #f2a00700; /* Color de fondo amarillo */
   color: white; /* Color del texto */
   padding: 12px 24px; /* Ajuste del padding para aumentar el espacio */
   border: none;
@@ -793,14 +793,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #d18905; /* Cambia el color al pasar el mouse */
-}
-
-
-button:hover {
-  background-color: #d18905; 
-}
 
 
 .bg-custom-light-brown {
