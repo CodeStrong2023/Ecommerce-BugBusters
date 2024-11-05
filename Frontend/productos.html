@@ -1,190 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Productos - Clave de Sol</title>
-        <link rel="icon" href="assets/logo/solo.png" type="image/png" />
-        <link rel="stylesheet" href="css/styles.css" />
-        <!-- Enlace al CSS compilado -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap"
-            rel="stylesheet"
-        />
-        <!-- Fuentes llamativas -->
-        <link rel="stylesheet" href="css/estilos.css" />
-        <!-- Estilos css personalizados -->
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
 
-    <body class="bg-custom-very-light-brown text-custom-text-light">
-        <!-- Barra de Tareas -->
-        <header class="bg-custom-light-brown text-white">
-            <nav class="flex justify-between items-center">
-                <div class="text-3xl font-bold flex items-center">
-                    <img
-                        src="assets/logo solo.png"
-                        alt="Logo Clave de Sol"
-                        class="mr-2 object-contain"
-                        style="width: 90px; height: 90px"
-                    />
-                    <h3><a href="index.html">Clave de Sol</a></h3>
-                </div>
-                <ul class="flex space-x-4">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos - Clave de Sol</title>
+    <link rel="icon" href="assets/logo/solo.png" type="image/png" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Enlace al CSS compilado -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <!-- Fuentes llamativas -->
+    <link rel="stylesheet" href="css/estilos.css" />
+    <!-- Estilos css personalizados -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-custom-very-light-brown text-custom-text-light">
+    <!-- Barra de Tareas -->
+    <header class="bg-custom-light-brown text-white">
+        <nav class="flex justify-between items-center">
+            <div class="text-3xl font-bold flex items-center">
+                <img src="assets/logo solo.png" alt="Logo Clave de Sol" class="mr-2 object-contain"
+                    style="width: 90px; height: 90px" />
+                <h3><a href="index.html">Clave de Sol</a></h3>
+            </div>
+            <ul class="flex space-x-4">
+                <li>
+                    <a href="index.html" class="hover:text-custom-orange">Inicio</a>
+                </li>
+                <li>
+                    <a href="sobre-nosotros.html" class="hover:text-custom-orange">Sobre Nosotros</a>
+                </li>
+                <li>
+                    <a href="productos.html" class="hover:text-custom-orange">Productos</a>
+                </li>
+                <li>
+                    <a href="contacto.html" class="hover:text-custom-orange">Contacto</a>
+                </li>
+            </ul>
+            <ul class="flex space-x-4">
+                <li>
+                    <a href="login.html" class="hover:text-custom-orange">Iniciar Sesión</a>
+                </li>
+                <li>
+                    <a href="register.html" class="hover:text-custom-orange">Registrarse</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Productos -->
+    <section id="productos" class="bg-custom-very-light-brown productos-section">
+        <div class="container mx-auto flex gap-4">
+            <!-- Sidebar de Filtros -->
+            <aside class="w-[180px] bg-custom-light-brown rounded-lg filtros flex flex-col text-center justify-center filtros">
+                <h2 class="text-lg font-bold mb-4" style="color: white">
+                    Productos
+                </h2>
+                <ul class="space-y-2">
                     <li>
-                        <a href="index.html" class="hover:text-custom-orange"
-                            >Inicio</a
-                        >
+                        <a href="#" class="block text-custom-text-dark hover:text-custom-orange categoria"
+                            data-categoria="Guitarras">Guitarras</a>
                     </li>
                     <li>
-                        <a
-                            href="sobre-nosotros.html"
-                            class="hover:text-custom-orange"
-                            >Sobre Nosotros</a
-                        >
+                        <a href="#" class="block text-custom-text-dark hover:text-custom-orange categoria"
+                            data-categoria="Bajos">Bajos</a>
                     </li>
                     <li>
-                        <a
-                            href="productos.html"
-                            class="hover:text-custom-orange"
-                            >Productos</a
-                        >
+                        <a href="#" class="block text-custom-text-dark hover:text-custom-orange categoria"
+                            data-categoria="Baterias">Baterías</a>
                     </li>
                     <li>
-                        <a href="contacto.html" class="hover:text-custom-orange"
-                            >Contacto</a
-                        >
+                        <a href="#" class="block text-custom-text-dark hover:text-custom-orange categoria"
+                            data-categoria="Teclados">Teclados</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-custom-text-dark hover:text-custom-orange categoria"
+                            data-categoria="Accesorios">Accesorios</a>
+                    </li>
+                    <li>
+                        <a href="productos.html" class=" hover:text-black bg-red-500 rounded-lg font-sm px-1">Resetear
+                            filtro</a>
                     </li>
                 </ul>
-                <ul class="flex space-x-4">
-                    <li>
-                        <a href="login.html" class="hover:text-custom-orange"
-                            >Iniciar Sesión</a
-                        >
-                    </li>
-                    <li>
-                        <a href="register.html" class="hover:text-custom-orange"
-                            >Registrarse</a
-                        >
-                    </li>
-                </ul>
-            </nav>
-        </header>
+            </aside>
 
-        <!-- Sección Productos -->
-        <section
-            id="productos"
-            class="bg-custom-very-light-brown productos-section"
-        >
-            <div class="container mx-auto flex gap-4">
-                <!-- Sidebar de Filtros -->
-                <aside
-                    class="w-[180px] bg-custom-light-brown rounded-lg filtros flex flex-col text-center justify-center"
-                >
-                    <h2 class="text-lg font-bold mb-4" style="color: white">
-                        Productos
-                    </h2>
-                    <ul class="space-y-2">
-                        <li>
-                            <a
-                                href="#"
-                                class="block text-custom-text-dark hover:text-custom-orange categoria"
-                                data-categoria="Guitarras"
-                                >Guitarras</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                class="block text-custom-text-dark hover:text-custom-orange categoria"
-                                data-categoria="Bajos"
-                                >Bajos</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                class="block text-custom-text-dark hover:text-custom-orange categoria"
-                                data-categoria="Baterias"
-                                >Baterías</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                class="block text-custom-text-dark hover:text-custom-orange categoria"
-                                data-categoria="Teclados"
-                                >Teclados</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                class="block text-custom-text-dark hover:text-custom-orange categoria"
-                                data-categoria="Accesorios"
-                                >Accesorios</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="productos.html"
-                                class=" hover:text-black bg-red-500 rounded-lg font-sm px-1"
-                                >Resetear filtro</a
-                            >
-                        </li>
-                    </ul>
-                </aside>
+            <!-- Productos -->
+            <section class="text-gray-600 body-font flex flex-wrap gap-10 justify-center items-center mb-[100px]"
+                id="productos-container"></section>
 
-                <!-- Productos -->
-                <section
-                    class="text-gray-600 body-font flex flex-wrap gap-10 justify-center items-center mb-[100px]"
-                    id="productos-container"
-                ></section>
-
-                <!-- Modal producto individual -->
-                <div id="modal" class="modal" style="display: none">
-                    <div class="modal-content">
-                        <div class="modal-img">
-                            <img id="imagen" />
-                        </div>
-                        <div class="modal-info">
-                            <h2 id="nombre"></h2>
-                            <p id="descripcion"></p>
-                            <p id="precio"></p>
-                            <button
-                                id="agregarCarrito"
-                                class="flex items-center justify-center px-5"
-                            >
-                                Agregar al Carrito
-                            </button>
-                        </div>
-                        <div>
-                            <p
-                                id="cerrar-modal"
-                                class="close bg-red-500 rounded-lg p-2"
-                            >
-                                X
-                            </p>
-                        </div>
+            <!-- Modal producto individual -->
+            <div id="modal" class="modal" style="display: none">
+                <div class="modal-content">
+                    <div class="modal-img">
+                        <img id="imagen" />
+                    </div>
+                    <div class="modal-info">
+                        <h2 id="nombre"></h2>
+                        <p id="descripcion"></p>
+                        <p id="precio"></p>
+                        <button id="agregarCarrito" class="flex items-center justify-center px-5">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                    <div>
+                        <p id="cerrar-modal" class="close bg-red-500 rounded-lg p-2">
+                            X
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Sección Final -->
-        <footer class="bg-custom-light-brown py-4 text-center">
-            <p class="text-custom-text-light">
-                © 2024 Clave de Sol. Todos los derechos reservados.
-            </p>
-            <p>
-                <a style="color: #f2a007" href="aboutUs.html"
-                    >Desarrolladores</a
-                >
-            </p>
-        </footer>
+    <!-- Sección Final -->
+    <footer class="bg-custom-light-brown py-4 text-center">
+        <p class="text-custom-text-light">
+            © 2024 Clave de Sol. Todos los derechos reservados.
+        </p>
+        <p>
+            <a style="color: #f2a007" href="aboutUs.html">Desarrolladores</a>
+        </p>
+    </footer>
 
-        <script type="module" src="js/productos.js"></script>
-        <script type="module" src="js/logica-carrito.js"></script>
-        <script type="module" src="js/header-update.js"></script>
-    </body>
+    <script type="module" src="js/productos.js"></script>
+    <script type="module" src="js/logica-carrito.js"></script>
+    <script type="module" src="js/header-update.js"></script>
+</body>
+
 </html>

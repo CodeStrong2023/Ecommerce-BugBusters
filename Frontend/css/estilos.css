@@ -41,6 +41,10 @@ li > a:hover {
     transition: 0.1s ease;
 }
 
+.registro, .inicio-sesion{
+    margin-top: 100px;
+}
+
 #carrito {
     width: 30px;
     color: white;
@@ -249,6 +253,10 @@ li > a:hover {
     margin-bottom: 50px;
 }
 
+#btn-mp{
+    margin: 0px;
+}
+
 .cart-counter {
     display: none;
     position: fixed;
@@ -290,4 +298,95 @@ li > a:hover {
 
 .fotos{
     object-fit: cover;
+}
+
+
+@media (min-width: 1024px) and (max-width: 1600px) {
+
+    /* INICIO */
+
+    .imagen-contenedor{
+        height: 87vh;
+    }
+
+    .imagen-inicio{
+        height: 95vh;
+    }
+
+    /* INICIAR SESION Y REGISTRO */
+
+    .registro, .inicio-sesion{
+        margin-top: 15px;
+    }
+
+    /* SOBRE NOSOTROS */
+
+    .seccion-nosotros{
+        margin-top: -70px;
+        margin-bottom: 50px;
+    }
+
+    .contendor-nosotros{
+        display: flex;
+        height: 390px;
+    }
+
+    .info-nosotros{
+        width: 100%;
+        font-size: 16px;
+        margin-top: 0px;
+    }
+
+    .imagen{
+        width: 60%;
+    }
+
+    /* PRODUCTOS */
+
+    #productos-container{
+        margin-left: 200px;
+    }
+
+    .modal{
+        top: 20px
+    }
+
+    .modal-content{
+        height: 450px;
+    }
+
+    .modal-info{
+        width: 65%;
+    }
+
+    .modal h2{
+        margin: 0px;
+        margin-bottom: 10px;
+        width: 100%;
+        font-size: 22px;
+    }
+
+    /* CONTACTO */
+
+    #contacto{
+        margin-bottom: 40px;
+    }
+
+    /* DESAROLLADORES */
+
+    .titulo{
+        margin: 0px;
+    }
+
+    .nosotros{
+        margin: 20px auto;
+        margin-bottom: 120px;
+        width: 95%;
+    }
+
+    .integrantes{
+        width: 400px;
+    }
+
+    
 }
