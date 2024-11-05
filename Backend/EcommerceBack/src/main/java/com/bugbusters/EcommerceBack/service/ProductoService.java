@@ -27,9 +27,6 @@ import java.util.stream.Collectors;
 @Service
 public class ProductoService {
 
-    @Value("${ruta.imagenes}")
-    private String rutaImagenes;
-
     private final IProductoRepository productoRepository;
     private final ICategoriaRepository categoriaRepository;
 
@@ -48,7 +45,6 @@ public class ProductoService {
     }
 
     public RespuestaProductoDTO saveProducto(CrearProductoDTO productoDTO){
-//        String nombreImagen = guardarImagen(productoDTO.imagen());
 
         String nombreImagen = saveImage(productoDTO.imagen());
         Producto producto = new Producto();
@@ -67,35 +63,6 @@ public class ProductoService {
                                         productoGuardado.getPrecio(), productoGuardado.getImagenUrl(), new CategoriaDTO(productoGuardado.getCategoria().getNombre()));
 
     }
-
-//    private String guardarImagen(MultipartFile imagen) {
-//        Path rutaDirectorio = Paths.get(rutaImagenes);
-//        if (!Files.exists(rutaDirectorio)) {
-//            try {
-//                Files.createDirectories(rutaDirectorio);
-//            } catch (IOException e) {
-//                throw new RuntimeException("Error al crear el directorio: " + e.getMessage(), e);
-//            }
-//        }
-//
-//        String nombreOriginal = imagen.getOriginalFilename();
-//
-//        // Generar un nombre único para el archivo
-//        String nombreArchivo = UUID.randomUUID().toString() + "_" + nombreOriginal;
-//
-//        // Ruta completa donde se guardará la imagen
-//        Path rutaCompleta = rutaDirectorio.resolve(nombreArchivo);
-//
-//        // Guardar la imagen en el sistema de archivos
-//        try {
-//            Files.copy(imagen.getInputStream(), rutaCompleta, StandardCopyOption.REPLACE_EXISTING);
-//            System.out.println(rutaCompleta);
-//        } catch (IOException e) {
-//            throw new RuntimeException("Error al guardar la imagen: " + e.getMessage(), e);
-//        }
-//
-//        return nombreArchivo;
-//    }
 
     private String saveImage(MultipartFile imagen) {
         String uploadDir = "imagenes/";  // Directorio de destino
@@ -132,7 +99,6 @@ public class ProductoService {
 
         // Solo guardar una nueva imagen si se proporciona una
         if (productoDTO.imagen() != null && !productoDTO.imagen().isEmpty()) {
-//            String nombreImagen = guardarImagen(productoDTO.imagen());
             String nombreImagen = saveImage(productoDTO.imagen());
             producto.setImagenUrl("/imagenes/" + nombreImagen);
         }

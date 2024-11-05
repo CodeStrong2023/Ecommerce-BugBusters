@@ -76,9 +76,9 @@ const abrirModal = (producto) => {
     const modalNombre = document.querySelector("#nombre");
     const modalDescripcion = document.querySelector("#descripcion");
     const modalPrecio = document.querySelector("#precio");
-    const agregarCarritoBtn = document.getElementById("agregarCarrito"); // Obtén el botón de agregar al carrito
+    const agregarCarritoBtn = document.getElementById("agregarCarrito");
 
-    // Asignar los valores del producto al modal
+    
     modalImagen.src = `http://localhost:8080${producto.imagenUrl}`;
     modalImagen.alt = producto.nombre;
     modalNombre.textContent = producto.nombre;
@@ -88,15 +88,14 @@ const abrirModal = (producto) => {
     // Mostrar el modal
     modal.style.display = "flex";
 
-    // Evento para cerrar el modal
+    // Cerrar el modal
     document.getElementById("cerrar-modal").addEventListener("click", () => {
         modal.style.display = "none";
     });
 
-    // Evento para agregar el producto al carrito
+    // Función para agregar producto al carrito
     agregarCarritoBtn.onclick = () => {
         agregarAlCarrito(producto); // Llama a la función para agregar al carrito
-        modal.style.display = "none"; // Cierra el modal después de agregar
     };
 };
 
@@ -123,7 +122,6 @@ const agregarAlCarrito = (producto) => {
 
     // Guarda el carrito actualizado en localStorage
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    // alert(`${producto.nombre} ha sido agregado al carrito!`);
 
     updateCartCounter();
 
