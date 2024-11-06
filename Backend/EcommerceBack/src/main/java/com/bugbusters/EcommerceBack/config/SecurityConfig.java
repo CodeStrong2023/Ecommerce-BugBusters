@@ -65,6 +65,7 @@ public class SecurityConfig {
                 .authorizeRequests(auth -> auth
                         .requestMatchers(HttpMethod.POST, "/usuarios", "/iniciar-sesion").permitAll() // Permitir estas rutas
                         .requestMatchers(HttpMethod.GET, "/productos/**", "/imagenes/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/create_preference").permitAll() // Permitir la ruta para MercadoPago
                         .anyRequest().authenticated()) // Otras rutas requieren autenticación
                 .addFilterBefore(new SecurityFilter(tokenService, usuarioRepository), UsernamePasswordAuthenticationFilter.class)
                 .build();

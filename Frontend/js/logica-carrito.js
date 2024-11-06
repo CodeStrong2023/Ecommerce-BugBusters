@@ -164,8 +164,7 @@ function setupEventListeners() {
 
 
 //Permite el pago con Mercado Pago
-async function iniciarPago(e) {
-    e.preventDefault();
+async function iniciarPago() {
     const carritoJSON = localStorage.getItem('carrito');
     const carrito = JSON.parse(carritoJSON);
 
