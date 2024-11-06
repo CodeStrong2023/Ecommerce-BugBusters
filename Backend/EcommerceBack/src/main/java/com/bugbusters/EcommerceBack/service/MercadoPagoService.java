@@ -20,7 +20,11 @@ import java.util.Map;
 @Service
 public class MercadoPagoService {
 
-    private String accessToken = "APP_USR-3172926259051065-110213-4b0ce9922c3896a6fac5ff3a8013dc94-1988058834";
+    //private String accessToken = "APP_USR-3172926259051065-110213-4b0ce9922c3896a6fac5ff3a8013dc94-1988058834";
+
+    @Value("${MP_ACCESS_TOKEN}")
+    private String accessToken;
+
 
     public String createPreference(List<Map<String, Object>> productos){
         MercadoPagoConfig.setAccessToken(accessToken);
