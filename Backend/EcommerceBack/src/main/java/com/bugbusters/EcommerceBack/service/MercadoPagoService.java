@@ -9,7 +9,7 @@ import com.mercadopago.client.preference.PreferenceRequest;
 import com.mercadopago.exceptions.MPApiException;
 import com.mercadopago.exceptions.MPException;
 import com.mercadopago.resources.preference.Preference;
-import com.mercadopago.resources.preference.PreferenceItem;
+import lombok.Value;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -19,6 +19,7 @@ import java.util.Map;
 
 @Service
 public class MercadoPagoService {
+
     private String accessToken = "APP_USR-3172926259051065-110213-4b0ce9922c3896a6fac5ff3a8013dc94-1988058834";
 
     public String createPreference(List<Map<String, Object>> productos){
