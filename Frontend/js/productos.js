@@ -20,7 +20,7 @@ const crearProductos = (productos) => {
         productoDiv.classList.add("producto");
 
         const img = document.createElement("img");
-        img.src = `https://ecommerce-bugbusters-production.up.railway.app/${producto.imagenUrl}`;
+        img.src = `https://ecommerce-bugbusters-production.up.railway.app${producto.imagenUrl}`;
         img.alt = producto.nombre;
 
         const nombre = document.createElement("h2");

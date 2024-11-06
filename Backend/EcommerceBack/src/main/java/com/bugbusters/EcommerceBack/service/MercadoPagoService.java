@@ -50,9 +50,9 @@ public class MercadoPagoService {
             }
 
             PreferenceBackUrlsRequest backUrlsRequest = PreferenceBackUrlsRequest.builder()
-                    .success("http://127.0.0.1:5500/Frontend/productos.html?pagoExitoso=true")
-                    .pending("http://127.0.0.1:5500/Frontend/productos.html?pagoPendiente=true")
-                    .failure("http://127.0.0.1:5500/Frontend/productos.html?pagoFallido=true")
+                    .success("https://ecommerce-bug-busters.vercel.app/productos.html?pagoExitoso=true")
+                    .pending("https://ecommerce-bug-busters.vercel.app/productos.html?pagoPendiente=true")
+                    .failure("https://ecommerce-bug-busters.vercel.app/productos.html?pagoFallido=true")
                     .build();
 
 
