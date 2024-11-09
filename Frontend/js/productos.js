@@ -1,6 +1,6 @@
 import { updateCartCounter } from "./header-update.js";
 
-const apiURL = "http://localhost:8080/productos";
+const apiURL = "https://ecommerce-bugbusters-production.up.railway.app/productos";
 
 const productosContainer = document.getElementById("productos-container");
 
@@ -20,7 +20,7 @@ const crearProductos = (productos) => {
         productoDiv.classList.add("producto");
 
         const img = document.createElement("img");
-        img.src = `http://localhost:8080${producto.imagenUrl}`;
+        img.src = `https://ecommerce-bugbusters-production.up.railway.app${producto.imagenUrl}`;
         img.alt = producto.nombre;
 
         const nombre = document.createElement("h2");
@@ -79,7 +79,7 @@ const abrirModal = (producto) => {
     const agregarCarritoBtn = document.getElementById("agregarCarrito");
 
     
-    modalImagen.src = `http://localhost:8080${producto.imagenUrl}`;
+    modalImagen.src = `https://ecommerce-bugbusters-production.up.railway.app${producto.imagenUrl}`;
     modalImagen.alt = producto.nombre;
     modalNombre.textContent = producto.nombre;
     modalDescripcion.textContent = producto.descripcion;
