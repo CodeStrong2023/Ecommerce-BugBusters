@@ -1,6 +1,6 @@
 import { updateCartCounter } from "./header-update.js";
 
-const apiURL = "https://ecommerce-bugbusters-production.up.railway.app/productos";
+const apiURL = "http://localhost:8080/productos";
 
 const productosContainer = document.getElementById("productos-container");
 
@@ -20,7 +20,7 @@ const crearProductos = (productos) => {
         productoDiv.classList.add("producto");
 
         const img = document.createElement("img");
-        img.src = `https://ecommerce-bugbusters-production.up.railway.app${producto.imagenUrl}`;
+        img.src = `http://localhost:8080${producto.imagenUrl}`;
         img.alt = producto.nombre;
 
         const nombre = document.createElement("h2");
@@ -79,7 +79,7 @@ const abrirModal = (producto) => {
     const agregarCarritoBtn = document.getElementById("agregarCarrito");
 
     
-    modalImagen.src = `https://ecommerce-bugbusters-production.up.railway.app${producto.imagenUrl}`;
+    modalImagen.src = `http://localhost:8080${producto.imagenUrl}`;
     modalImagen.alt = producto.nombre;
     modalNombre.textContent = producto.nombre;
     modalDescripcion.textContent = producto.descripcion;
@@ -91,16 +91,33 @@ const abrirModal = (producto) => {
     // Cerrar el modal
     document.getElementById("cerrar-modal").addEventListener("click", () => {
         modal.style.display = "none";
+        cierreModal();  
     });
 
     // Función para agregar producto al carrito
     agregarCarritoBtn.onclick = () => {
         agregarAlCarrito(producto); // Llama a la función para agregar al carrito
+        cierreModal();
     };
 };
 
+// Función para mostrar el alerta personalizado
+function mostrarAlertaPersonalizada(mensaje) {
+    const customAlert = document.getElementById("custom-alert");
+    const customAlertMessage = document.getElementById("custom-alert-message");
+    const customAlertClose = document.getElementById("custom-alert-close");
+
+    customAlertMessage.textContent = mensaje;
+    customAlert.style.display = "flex";
+
+    // Cerrar el alerta al hacer clic en "Aceptar"
+    customAlertClose.onclick = () => {
+        customAlert.style.display = "none";
+    };
+}
+
+// Modifica agregarAlCarrito para usar la alerta personalizada
 const agregarAlCarrito = (producto) => {
-    //validamos que el usario esté registrado
     const token = sessionStorage.getItem("token");
 
     if (!token) {
@@ -108,27 +125,21 @@ const agregarAlCarrito = (producto) => {
         return;
     }
 
-    // Obtén el carrito actual del localStorage o crea uno nuevo
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    // Verifica si el producto ya está en el carrito
     const productoExistente = carrito.find((item) => item.id === producto.id);
+
     if (productoExistente) {
-        productoExistente.cantidad += 1; // Incrementa la cantidad
+        productoExistente.cantidad += 1;
     } else {
-        // Agrega el nuevo producto
         carrito.push({ ...producto, cantidad: 1 });
     }
 
-    // Guarda el carrito actualizado en localStorage
+    // Usa la alerta personalizada en lugar de alert()
+    mostrarAlertaPersonalizada(`El producto ${producto.nombre} ha sido agregado al carrito.`);
+
     localStorage.setItem("carrito", JSON.stringify(carrito));
-
     updateCartCounter();
-
-    const totalCard = document.getElementById("total-card");
-    if (totalCard) {
-        totalCard.classList.remove("total-card");
-    }
+    cierreModal();
 };
 
 //limpia el carrito luego de la compra
@@ -141,3 +152,11 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem("carrito");
     }
 });
+
+function cierreModal() {
+    // Selecciona el modal y lo oculta
+    const modal = document.getElementById('modal'); // Eliminamos el #
+    if (modal) {
+        modal.style.display = 'none'; // Oculta el modal
+    }
+}
