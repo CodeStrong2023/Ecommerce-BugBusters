@@ -7,8 +7,7 @@
     <title>Contacto - Clave de Sol</title>
     <link rel="icon" href="assets/logo solo.png" type="image/png">
     <link rel="stylesheet" href="css/styles.css"> <!-- Enlace al CSS compilado -->
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap"
-        rel="stylesheet"> <!-- Fuentes llamativas -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> <!-- Fuentes llamativas -->
     <link rel="stylesheet" href="css/estilos.css"> <!-- Estilos css personalizados -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -18,8 +17,7 @@
     <header class="bg-custom-light-brown">
         <nav class="flex justify-between items-center">
             <div class="text-3xl font-bold flex items-center">
-                <img src="assets/logo solo.png" alt="Logo Clave de Sol" class="mr-2 object-contain"
-                    style="width: 90px; height: 90px;">
+                <img src="assets/logo solo.png" alt="Logo Clave de Sol" class="mr-2 object-contain" style="width: 90px; height: 90px;">
                 <h3><a href="index.html">Clave de Sol</a></h3>
             </div>
             <ul class="flex space-x-4">
@@ -35,80 +33,72 @@
         </nav>
     </header>
 
-    <!-- Sección Contacto -->
     <section id="contacto" class="bg-custom-very-light-brown py-8 flex-grow w-full">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4 font-Montserrat text-custom-orange">Contacto</h2>
-            <p class="text-lg mb-8 font-Montserrat text-custom-text-dark">Si tienes preguntas, ¡no dudes en
-                contactarnos!</p>
-
-            <!-- Email -->
-            <div class="flex items-center justify-center mb-4">
-                <span class="mr-2">
-                    <img src="assets/correo logo.png" alt="Email" style="height: 1.5rem; width: 1.5rem;"
-                        class="inline-block">
-                </span>
-                <p class="text-lg font-Montserrat text-white">Email: contacto@clavedesol.com</p>
-            </div>
-
-            <!-- Ubicación -->
-            <div class="flex items-center justify-center mb-4">
-                <span class="mr-2">
-                    <img src="assets/ubicacion.png" alt="Ubicación" style="height: 1.5rem; width: 1.5rem;"
-                        class="inline-block">
-                </span>
-                <p class="text-lg font-Montserrat text-white">Ubicación: San Rafael, Mendoza</p>
-            </div>
-
-            <!-- Teléfono -->
-            <div class="flex items-center justify-center mb-4 mr-6">
-                <span class="mr-2">
-                    <img src="assets/telefono-logo.png" alt="Teléfono" style="height: 1.5rem; width: 1.5rem;"
-                        class="inline-block">
-                </span>
-
-                <p class="text-lg font-Montserrat text-white">Teléfono: +54 9 2604045601</p>
-
-            </div>
-
-            <!-- Formulario de Contacto -->
-            <div class="my-form mb-8 rounded-lg">
-                <div class="form-group mb-4">
-                    <input type="text" class="form-control rounded w-3/4 md:w-1/2 mx-auto mb-4" placeholder="Nombre"
-                        style="padding: 8px; font-size: 0.9rem;">
-                    <div class="form-group">
-                        <input type="text" class="form-control rounded w-3/4 md:w-1/2 mx-auto mb-4"
-                            placeholder="Apellido">
-                    </div>
-                    <div class="form-group mb-4">
-                        <input type="email" class="form-control rounded w-3/4 md:w-1/2 mx-auto" placeholder="Email"
-                            style="padding: 8px; font-size: 0.9rem;">
-                    </div>
-
-
-                    <div class="form-group mb-4">
-                        <textarea class="form-control rounded w-3/4 md:w-1/2 mx-auto" placeholder="Consulta"
-                            style="padding: 8px; font-size: 0.9rem;"></textarea>
-                    </div>
-                    <!-- Botón Enviar -->
-                    <div class="flex justify-center">
-                        <button
-                            class="bg-custom-orange text-white font-bold py- px-12 rounded-full hover:bg-opacity-80 mx-auto text-lg">
-                            Enviar
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <h2 class="text-3xl font-bold mb-4 font-Montserrat text-black">Si tienes preguntas, ¡no dudes en contactarnos!</h2>
+        </div>
     </section>
 
-    <!-- Sección Final -->
-    <footer class="bg-custom-light-brown py-4 text-center">
-        <p class="text-custom-text-light">
-            © 2024 Clave de Sol. Todos los derechos reservados.
-        </p>
-    </footer>
+    <div class="contact-container">
+        <div class="contact-info fade-in">
+            <h2>Información de Contacto</h2>
+            <p class="text-lg font-Montserrat text-black">Email: clavedesol.soporte@gmail.com</p>
+            <p class="text-lg font-Montserrat text-black">Ubicación: San Rafael, Mendoza</p>
+            <p class="text-lg font-Montserrat text-black">Teléfono: +54 9 2604045601</p>
 
-    <script type="module" src="js/header-update.js"></script>
-</body>
+            <div class="social-icons">
+                <a href="https://api.whatsapp.com/send?phone=5492604045601" target="_blank">📱</a>
+                <a href="mailto:clavedesol.soporte@gmail.com" target="_blank">📧</a>
+                <a href="http://127.0.0.1:5500/Frontend/index.html" target="_blank">🔵</a>
+            </div>
+        </div>
 
+        <div class="contact-form fade-in">
+            <h2>Envíanos un mensaje</h2>
+            <form id="contactForm" action="https://formsubmit.co/clavedesol.soporte@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu correo" required>
+                <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+                <!-- Redirige a la misma página después del envío -->
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/Frontend">
+                <input type="hidden" name="_captcha" value="false">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Animación de desvanecimiento
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => {
+                el.style.animation = 'fadeIn 2s forwards';
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+        // Animación de desvanecimiento
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => {
+                el.style.animation = 'fadeIn 2s forwards';}
+            );
+        });
+        const form = document.getElementById('contactForm');
+                    
+        form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Evita el envío inmediato del formulario
+                        
+                        // Mostrar el alert con el mensaje de confirmación
+                        alert("¡Mail enviado con éxito... Te estamos redireccionando!");
+                        
+                        // Después de que el usuario presione "OK", enviar el formulario
+                        form.submit(); // Enviar el formulario después de que se cierre el alert
+                    });
+    </script>
+        <!-- Sección Final -->
+        <footer class="bg-custom-light-brown py-4 text-center">
+            <p class="text-custom-text-light">© 2024 Clave de Sol. Todos los derechos reservados.</p>
+        </footer>
+    
+        <script type="module" src="js/header-update.js"></script>
+    </body>
 </html>
