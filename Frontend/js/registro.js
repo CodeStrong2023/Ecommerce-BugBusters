@@ -26,7 +26,7 @@ btnRegistrarse.addEventListener('click', async (event) => {
     }
 
     try{
-        const response = await fetch("http://localhost:8080/usuarios",{
+        const response = await fetch("http:localhost:8080/usuarios",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

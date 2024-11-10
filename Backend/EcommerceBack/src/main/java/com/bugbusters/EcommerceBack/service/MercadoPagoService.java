@@ -9,7 +9,7 @@ import com.mercadopago.client.preference.PreferenceRequest;
 import com.mercadopago.exceptions.MPApiException;
 import com.mercadopago.exceptions.MPException;
 import com.mercadopago.resources.preference.Preference;
-import com.mercadopago.resources.preference.PreferenceItem;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -19,7 +19,13 @@ import java.util.Map;
 
 @Service
 public class MercadoPagoService {
+
     private String accessToken = "APP_USR-239783461842066-110522-af965c4f17f7dca56185d0e4b2a1ae20-2081149170";
+
+    //@Value("${MP_ACCESS_TOKEN}")
+    //private String accessToken;
+
+
 
     public String createPreference(List<Map<String, Object>> productos){
         MercadoPagoConfig.setAccessToken(accessToken);
@@ -50,9 +56,9 @@ public class MercadoPagoService {
             }
 
             PreferenceBackUrlsRequest backUrlsRequest = PreferenceBackUrlsRequest.builder()
-                    .success("http://127.0.0.1:5500/Frontend/productos.html?pagoExitoso=true")
-                    .pending("http://127.0.0.1:5500/Frontend/productos.html?pagoPendiente=true")
-                    .failure("http://127.0.0.1:5500/Frontend/productos.html?pagoFallido=true")
+                    .success("http://localhost:5500/productos.html?pagoExitoso=true")
+                    .pending("http://localhost:5500/productos.html?pagoPendiente=true")
+                    .failure("http://localhost:5500/productos.html?pagoFallido=true")
                     .build();
 
 

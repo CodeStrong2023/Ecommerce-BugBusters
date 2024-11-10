@@ -391,11 +391,8 @@ li > a:hover {
         font-size: 22px;
     }
 
-    /* CONTACTO */
-
-    #contacto{
+    .contact-container{
         margin-bottom: 40px;
     }
 
-    
 }
