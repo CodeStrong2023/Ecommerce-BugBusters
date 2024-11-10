@@ -393,8 +393,8 @@ li > a:hover {
 
     /* CONTACTO */
 
-    #contacto{
-        margin-bottom: 40px;
+    .contact-container{
+        margin-bottom: 50px;
     }
 
     
